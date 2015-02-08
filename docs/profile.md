@@ -47,3 +47,21 @@ My name is James Desjardin and I am a junior computer science major at UMass Amh
 
 + Communication 260: Public Speaking is one of the most useful skills to work on no matter what your profession is which is why I wanted to take Comm 260. This course helped me learn better techniques for speaking in public, and the structure of the course made it so that I could work towards my own goals of what I wanted to improve on and learn what helped me best with speaking in public.
 
+
+
+Kalina Nedkova
+
+## Bio
+I am a physics major minoring in both math and computer science. I will be graduating at the end of this semester and then going to graduate school for a PhD in physics. I am also originally from Bulgaria and over the summer I worked at the University of Rome in Italy!
+
+## CS Courses Taken
++ CS 121
++ CS 187
++ CS 230
++ CS 240
+
+## Other Courses
+
++ Physics 440: This course had a big impact on me because it was the first lab which required me to independently work on experiments. I was never given instructions or a procedure explaining how to do the experiments and was expected to read scientific articles that explained the apparatus. This class helped me understand what experimental research in physics is really like.
+
++ Physics 381: Writing in physics helped me understand how important it is to be able to clearly explain scientific concepts in writing.  
