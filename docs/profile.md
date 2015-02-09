@@ -115,3 +115,20 @@ This class helped me a lot with problem solving skill and simulating physical ph
 
 This class helped me learn more about thermodynamic properties of fluids! It helped me develop problem solving skills! It will help me with solving problems in our project!
 
+#Kavya Krishna#
+
+#Bio#
+
+I am a junior at University Of Massacheusetts Amherst. My major is computer science.I am an international transfer. I am a classical dancer and love solving puzzles.
+
+#Classes#
+
+CS220                                                                                                                         
+CS240                                                                                                                                                                                                                                                        
+BIO100
+ 
+The class is called MyDNA. This class helped me understand the structure of human DNA, genetics and history of human existence.
+
+MATH441
+This class helped me understand maths behind finance.
+
