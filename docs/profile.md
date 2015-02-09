@@ -72,3 +72,13 @@ I am a physics major minoring in both math and computer science. I will be gradu
 I'm a junior at UMASS Amherst, majoring in both Computer Science and Journalism. I'm expecting to graduate at the end of next Spring semester and am looking for a job in the video game industry, whether that be programming or journalism. I come from Hingham, Massachusetts and hope to stay local and work in Boston.
 
 ## CS Courses Taken
++ CS 121
++ CS 187
++ CS 220
++ CS 230
++ CS 240
++ CS 250
++ CS 391LI
++ CS 311 (In progress)
++ CS 377 (In progress)
+
