@@ -82,3 +82,10 @@ I'm a junior at UMASS Amherst, majoring in both Computer Science and Journalism.
 + CS 311 (In progress)
 + CS 377 (In progress)
 
+## Other Courses
+
++ ANTHRO 100: Human Nature
+++ Studying anthropology, especially in regards to human nature, helped me to understand how a culture develops and interacts with others. It helped me appreciate the intricacies of culture.
+
++ PHIL 160: Intro to Ethics
+++ This class really helped me see how fluid and subjective ethics are. I had an idea of that already, but this class pushed it home. Learning about all the different outlooks and types of ethical views was really eye opening.
