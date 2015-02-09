@@ -65,3 +65,10 @@ I am a physics major minoring in both math and computer science. I will be gradu
 + Physics 440: This course had a big impact on me because it was the first lab which required me to independently work on experiments. I was never given instructions or a procedure explaining how to do the experiments and was expected to read scientific articles that explained the apparatus. This class helped me understand what experimental research in physics is really like.
 
 + Physics 381: Writing in physics helped me understand how important it is to be able to clearly explain scientific concepts in writing.  
+
+# Colin McGinnis
+
+## Bio
+I'm a junior at UMASS Amherst, majoring in both Computer Science and Journalism. I'm expecting to graduate at the end of next Spring semester and am looking for a job in the video game industry, whether that be programming or journalism. I come from Hingham, Massachusetts and hope to stay local and work in Boston.
+
+## CS Courses Taken
