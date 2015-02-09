@@ -92,3 +92,26 @@ I'm a junior at UMASS Amherst, majoring in both Computer Science and Journalism.
 + ANTHRO 100 Human Nature: Studying anthropology, especially in regards to human nature, helped me to understand how a culture develops and interacts with others. It helped me appreciate the intricacies of culture.
 
 + PHIL 160 Intro to Ethics: This class really helped me see how fluid and subjective ethics are. I had an idea of that already, but this class pushed it home. Learning about all the different outlooks and types of ethical views was really eye opening.
+
+# ROHAN KAPOOR#
+
+#BIO#
+
+I am a Sophomore at University of Massachusetts Amherst studying Computer Science and Physics. I am also an avid photographer and love reading books.
+
+#CLASSES#
+
+* CS 121
+* CS 187
+* CS 230
+* CS 240
+
+
+* PHYSICS 281
+
+This class helped me a lot with problem solving skill and simulating physical phenomenins. It was about computaional physics and it helped me visualize physical phenomenon.
+ 
+* PHYSICS 284
+
+This class helped me learn more about thermodynamic properties of fluids! It helped me develop problem solving skills! It will help me with solving problems in our project!
+
