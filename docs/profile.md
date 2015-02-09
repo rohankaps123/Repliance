@@ -1,6 +1,6 @@
 # Team Rocket
 ### "We're blasting off!"
-! (/squid.png)
+![logo] (/docs/squid.png)
 
 ### Area of Interest
 #### We're always interested in working with creating social and cultural connections between people
