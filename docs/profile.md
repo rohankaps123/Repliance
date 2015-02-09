@@ -5,34 +5,32 @@
 ### Area of Interest
 #### We're always interested in working with creating social and cultural connections between people
 
-Matt Fischer
-27118143
+# Matt Fischer
+## Bio
 
-CS Courses Taken:
+My name is Matt Fischer. I am currently a junior Computer Science major with an IT minor. I am a second-year RA in a freshman building. I am from New Jersey, where I work as a waiter in a family burger restaurant.
 
-CS 121
-CS 187
-CS 197U
-CS 220
-CS 230
-CS 240
-CS 250
-CS 311
+## CS Courses Taken:
 
-Other Courses:
++ CS 121
++ CS 187
++ CS 197U
++ CS 220
++ CS 230
++ CS 240
++ CS 250
++ CS 311
 
-Anthro 106
-Comp-Lit 335
-History 180
+## Other Courses:
 
-Currently Enrolled:
++ Anthro 106
++ Comp-Lit 335
++ History 180
 
-CS 326
-CS 377
+## Currently Enrolled:
 
-Brief Bio:
-
-CompSci Major junior. From NJ. RA on campus. 
++ CS 326
++ CS 377
 
 # James Desjardin
 
