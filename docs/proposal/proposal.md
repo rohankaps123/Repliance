@@ -1,6 +1,4 @@
 ![repliance](squid_repliance.png)
-
-#Repliance
 ###A Team Rocket Venture
  
 ##Meet the Team
