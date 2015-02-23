@@ -7,7 +7,6 @@ DO NOT DELETE OR MODIFY THIS FILE. Your reviewer is the only person
 allowed to modify and update this file with information that will
 comments and guidance on your project.
 ***
-
 # Project: Profile
 
 **Overall**: I like your squid logo and I appreciate that it isn’t some big pixelated mess. The formatting of the profile page was nice and clean as well. The bios need some more work though and there needs to be an idea of what you want your startup to do.
