@@ -9,13 +9,37 @@ I am a Junior at UMass majoring in Computer Science. I have worked with HTML/CSS
 
 ##Problem Statement
 ####Author: Colin McGinnis 2/22/2015
+
 Often times, we feel our friends aren't being completely truthful when we ask for advice or critiques. For example, when someone asks a friend if what they are wearing looks good, the friend may be more inclined to say yes, no matter how it actually looks. In the classes that our group has taken in the past, such as Anthropology 100 and Psychology 100, it has become clear that some of the most helpful and true advice comes from people who have a neutral view of you, who don't yet know you. Through those two classes, we've found that people are their most truthful when anonymous. 
 
 When you don't have stock in a relationship, and a critique may not be overtly positive, it becomes easier to give that critique. What our startup hopes to do, through the skills from the CS courses we’ve taken, is create a place where people can get completely unbiased advice on the decisions they are thinking of making. CS 345 has given us knowledge of databases that we’ll use in solving the problem and classes like CS 187 and 220 have provided us with the skills to create custom data structures and utilize design strategies that will help make our app more efficient.
 
 ##Our Solution - Repliance
+####Author: James Desjardin 2/22/2015
 
+The working name we have for our application is Repliance, a question and answer app which draws inspiration from websites and applications such as Quora, Yahoo! Answers, and Snapchat. Repliance will allow a user to post a question and receive anonymous replies, after which the post will be deleted from view for everyone except the user who posted it.
 
+Users who wish to post a question will do so by logging in and creating a new post, including text and optionally including a photo. The post they make is then sent to the inbox or feed of a certain number of other random users, who can choose to reply. Users replying to posts can only see their own replies; in other words, there is no public comment chain to the original post.
+
+One feature of the app is that the amount of users the poster wishes to receive replies from is specified by the poster. For example, if the poster poses a question, they may specify to make the post unavailable to other users “after twenty responses” or some other number dictated by options available to choose from on the web app. This is one of two options for when a post decides to close itself off from public view.
+
+The other option for when a post will vanish is time. A poster may pose a question, and have it set to remove itself from public view after "15 minutes", regardless of the number of replies it has.
+
+As soon as either option completes, the post is hidden from all users except the poster, and the poster can look through the replies they received for as long as they want and see what people had to say.
+
+From the perspective of a user who is not asking a question themselves, they may scroll through questions in a feed and choose which to reply to. The amount of time left a question has before it disappears, and the number of replies needed before closing, will be visible, but what others have replied to it with will not be visible. This allows for the users who originally posted questions to receive answers which they know are not influenced by what others have already said.
+
+Posts will be sorted in the inbox feed by "least time left" and "least replies needed" at the top, so that shorter polls (lasting a few minutes) get replies the fastest, or posts which just need a few more answers to close will be higher priority.
+
+The function of the application for posters and repliers is demonstrated in the following example.
+
+Bob Smith logs in to his Repliance account, because he needs some honest opinions on a new shirt he has purchased. Bob creates a post, where he includes a photo of himself wearing the shirt, and adds the text “Going out tonight, yes/no on the shirt?” as the question. Bob is in a rush, so he chooses for his post to last ten minutes, but does not set a limit on the amount of replies he needs.
+
+Sally Johnson is logged in to Repliance, having fun writing answers to questions, and sees Bob’s post pop up in her inbox feed. Sally writes back “No way, that’s a shade of yellow only a crossing guard could love.” and continues on browsing other questions.
+
+Ten minutes later, Bob checks the replies he’s gotten. No one else using Repliance can see his post at this time, but he takes note of Sally’s feedback and picks a new outfit. Bob was able to find the advice he needed quickly when he didn’t have anyone who he wanted to ask in his regular circle of friends.
+
+The reason Repliance is unique from sites like Quora and Yahoo! Answers is the anonymity and lifespan of posts. Isolating commenters from viewing other comments keeps their replies original and not influenced by what others have written, and the automatic deletion of posts (in the nature of apps such as Snapchat) keeps posters feeling comfortable with asking or posting whatever they wish. Users are also unable to see or follow the names of other user accounts, which provides a layer of anonymity to let people be completely honest in their replies and feel more comfortable in what they ask or post.
 
 ##Expected Timeline
 
