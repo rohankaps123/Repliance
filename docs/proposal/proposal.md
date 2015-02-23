@@ -5,7 +5,9 @@
 
 #### James Desjardin: Back End Development, Database Development.
 
-I am a Junior at UMass majoring in Computer Science. I have worked with HTML/CSS in the past but am interested in learning more about back-end development in this course. Last semester I took CS 345, and hope to use what I learned about SQL in that course to help with Repliance's database. I also have taken CS 220, which I hope helps me work on determining how Repliance's back-end should be structured.
+I am a Junior at UMass majoring in Computer Science. I have worked with HTML/CSS in the past but am interested in learning more about back-end development in this course. Last semester I took CS 345, and hope to use what I learned about SQL in that course to help with Repliance's database. I have also taken CS 220, which I hope helps me work on determining how Repliance's back-end should be structured.
+
+About me: I currently have two jobs on campus, working at IT User Services and at The Massachusetts Daily Collegian. At IT User Services I am a Lead Consultant and Student Multimedia Assistant, which includes everything from fixing computers, helping students and professors with computer problems in person, shooting video for events and talks on campus as well as video projects for other departments, and sometimes graphic design. At the Daily Collegian, the school's independent student newspaper, I'm the Graphics Production Manager, which means I do lots of design work and oversee the graphics department which is responsible for anything graphic design related that goes in the paper or on our website, mostly working with Photoshop, Illustrator, and InDesign. I also help run UMass Model UN, hosted every spring on campus for high school students from March 13 - 15, of which I designed the website for. I am also doing a secondary major in Communication.
 
 ####Colin McGinnis: Back End Development
 
