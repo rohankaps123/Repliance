@@ -85,3 +85,11 @@ Additional features if time permits:
 
 ##Project Funding
 
+| Use for funds       | Cost per month  | Cost for 3 months total |
+|---------------------|-----------------|-------------------------|
+| Purchase of domain  | ~$5             | $15 (yearly purchase)   |
+| Dedicated Server    | $130            | $390                    |
+| Combined Salaries   | $9600           | $28,800                 |
+| Office Space Rental | $2,000          | $6,000                  |
+|                     |                 |                         |
+| Total (rounded up)  | ~$12,000        | ~$36,000                |
