@@ -11,6 +11,10 @@ I am a Junior at UMass majoring in Computer Science. I have worked with HTML/CSS
 
 I'm a Junior at UMASS Amherst majoring in both Computer Science and Journalism. I have worked with a little bit of HTML before and have some basic knowledge of javascript. My main coding experience lies with C and Java. With both Computer Science and Journalism, I hope to end up in some area of the video game industry, whether that be in development or game journalism. Some courses I've taken in the past and am currently taking that will help in developing Repliance are CS 220, CS 187, and CS 311.
 
+####Kalina Nedkova: Back End Development and Database Development
+I am a Senior majorning in Physics with a minor in both Computer Science and Math. Next year, I will be a physics graduate student and I hope to be researching soft matter physics through computer simulations. I am most comfortable coding in C, python, and Java, but I look forward to learning more SQL. I hope that CS 187 and 230 help me in developing our app. 
+
+
 ##Problem Statement
 ####Author: Colin McGinnis 2/22/2015
 
@@ -46,5 +50,35 @@ Ten minutes later, Bob checks the replies he's gotten. No one else using Replian
 The reason Repliance is unique from sites like Quora and Yahoo! Answers is the anonymity and lifespan of posts. Isolating commenters from viewing other comments keeps their replies original and not influenced by what others have written, and the automatic deletion of posts (in the nature of apps such as Snapchat) keeps posters feeling comfortable with asking or posting whatever they wish. Users are also unable to see or follow the names of other user accounts, which provides a layer of anonymity to let people be completely honest in their replies and feel more comfortable in what they ask or post.
 
 ##Expected Timeline
+####Author: Kalina Nedkova 2/23/2015
+
+2/21/2015 - 2/28/2015  (1 week)
+  +  look for similar apps to guarantee Repliance is unique
+  +  find useful libraries
+
+2/28/2015 - 3/14/2015  (2 weeks)
+  +  Skeleton describing how the code will work
+  +  Database setup
+  +  User interface
+
+3/14/2015 - 3/28/2015  (2 weeks)
+  +  Be able to make a user account
+  +  Be able to send photos/text to other users
+  +  Front-end
+
+3/28/2015 - 4/11/2015  (2 weeks)
+  +  Be able to receive comments on posts
+  +  Limit how long a post stays available to other users
+
+4/11/2015 - 4/25/2015 (2 weeks)
+  +  Testing and debugging
+  +  Complete final version of the app
+  +  Final presentation
+
+Additional features if time permits:
+  +  Sponsored question
+
+
 
 ##Project Funding
+
