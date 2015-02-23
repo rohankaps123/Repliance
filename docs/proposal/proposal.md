@@ -7,6 +7,10 @@
 
 I am a Junior at UMass majoring in Computer Science. I have worked with HTML/CSS in the past but am interested in learning more about back-end development in this course. Last semester I took CS 345, and hope to use what I learned about SQL in that course to help with Repliance's database. I also have taken CS 220, which I hope helps me work on determining how Repliance's back-end should be structured.
 
+####Colin McGinnis: Back End Development
+
+I'm a Junior at UMASS Amherst majoring in both Computer Science and Journalism. I have worked with a little bit of HTML before and have some basic knowledge of javascript. My main coding experience lies with C and Java. With both Computer Science and Journalism, I hope to end up in some area of the video game industry, whether that be in development or game journalism. Some courses I've taken in the past and am currently taking that will help in developing Repliance are CS 220, CS 187, and CS 311.
+
 ##Problem Statement
 ####Author: Colin McGinnis 2/22/2015
 
