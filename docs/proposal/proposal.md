@@ -20,9 +20,12 @@ I am a Senior majorning in Physics with a minor in both Computer Science and Mat
 
 About me: I was born in Bulgaria, where I lived until the age of 7. When I moved to the US, I became more interested in the sciences than the humanities because I had a hard time reading and writing in English, but could easily solve math problems. I think this is why I ultimately chose to be a physics major. My sophomore year, I decided to get involved in research and I joined the UMass LIGO group, which is a physics research group that aims to detect gravitational waves. Gravitational waves were detected by Einstein but they have never been observed experimentally. After the first few weeks of getting acquainted with the kind of work that the LIGO group did, it became clear to me that computer science is absolutely necessary for any research in physics, which motivated to start working toward my CS minor. My CS courses have significantly helped me with my research, for which I am currently writing a script which produces a trigger every time excess power in the signal of the LIGO detectors is resolved. 
 
-####Matt Fischer: Front-End Development, Back-End Development, UI
 
-I am a Junior at UMass Amherst. I am majoring in Computer Science, with a minor in Information Technology. I am very familiar with C, Java, Scala, and Python, with Javascript in the process of being learned.  I had some exposure to Computer Science in high school, where I realized it was what I wanted to major in in college. I am from Westwood, New Jersey, where I work as a waiter. I am also in my second year as a resident assistant in a freshman dorm. With multiple classes under my belt, I am confident that we will be able to turn Repliance into something amazing.
+####Matt Fischer: Front-End Development, Back-End Development, UI
+I am a Junior at UMass Amherst. I am majoring in Computer Science, with a minor in Information Technology. I am very familiar with C, Java, Scala, and Python, with Javascript in the process of being learned. I am interested in many areas of Computer Science, and am eager to learn many parts of the field.
+
+About me: I had some exposure to Computer Science in high school, where I realized it was what I wanted to major in in college. I am from Westwood, New Jersey, where I work as a waiter when I am home for break. I am also in my second year as a resident assistant in a freshman dorm, and will continue into the next year. I don't expect to go onto graduate school after college, at least until I have a stable job that will help me pay for its tuition. With a multitude of Computer Science classes under my belt, I am confident that we will be able to turn Repliance into something amazing.
+
 
 ##Problem Statement
 ####Author: Colin McGinnis 2/22/2015
