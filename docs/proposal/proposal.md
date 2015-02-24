@@ -11,12 +11,16 @@ About me: I currently have two jobs on campus, working at IT User Services and a
 
 ####Colin McGinnis: Back End Development
 
-I'm a Junior at UMASS Amherst majoring in both Computer Science and Journalism. I have worked with a little bit of HTML before and have some basic knowledge of javascript. My main coding experience lies with C and Java. With both Computer Science and Journalism, I hope to end up in some area of the video game industry, whether that be in development or game journalism. Some courses I've taken in the past and am currently taking that will help in developing Repliance are CS 220, CS 187, and CS 311.
+I'm a Junior at UMass Amherst majoring in both Computer Science and Journalism. I have worked with a little bit of HTML before and have some basic knowledge of javascript. My main coding experience lies with C and Java. With both Computer Science and Journalism, I hope to end up in some area of the video game industry, whether that be in development or game journalism. Some courses I've taken in the past and am currently taking that will help in developing Repliance are CS 220, CS 187, and CS 311.
 
 ####Kalina Nedkova: Back End Development and Database Development
 I am a Senior majorning in Physics with a minor in both Computer Science and Math. Next year, I will be a physics graduate student (I am currently deciding between Syracuse and Georgetown) and I hope to be researching soft matter physics through computer simulations. I am most comfortable coding in C, python, and Java, but I look forward to learning more SQL and I am very interested in developing the database because I think this is an extremely useful skill to have. I hope that CS 187 and 230 help me understand some of the concepts behind developing our app.
 
 About me: I was born in Bulgaria, where I lived until the age of 7. When I moved to the US, I became more interested in the sciences than the humanities because I had a hard time reading and writing in English, but could easily solve math problems. I think this is why I ultimately chose to be a physics major. My sophomore year, I decided to get involved in research and I joined the UMass LIGO group, which is a physics research group that aims to detect gravitational waves. Gravitational waves were detected by Einstein but they have never been observed experimentally. After the first few weeks of getting acquainted with the kind of work that the LIGO group did, it became clear to me that computer science is absolutely necessary for any research in physics, which motivated to start working toward my CS minor. My CS courses have significantly helped me with my research, for which I am currently writing a script which produces a trigger every time excess power in the signal of the LIGO detectors is resolved. 
+
+####Matt Fischer: Front-End Development, Back-End Development, UI
+
+I am a Junior at UMass Amherst. I am majoring in Computer Science, with a minor in Information Technology. I am very familiar with C, Java, Scala, and Python, with Javascript in the process of being learned.  I had some exposure to Computer Science in high school, where I realized it was what I wanted to major in in college. I am from Westwood, New Jersey, where I work as a waiter. I am also in my second year as a resident assistant in a freshman dorm. With multiple classes under my belt, I am confident that we will be able to turn Repliance into something amazing.
 
 ##Problem Statement
 ####Author: Colin McGinnis 2/22/2015
