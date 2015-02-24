@@ -130,15 +130,15 @@ I am a junior at University Of Massacheusetts Amherst. My major is computer scie
 
 #Classes#
 
-+CS220
-+CS240
++ CS220
++ CS240
 
 ## Other Courses
 
-+BIO100
++ BIO100
 
 The class is called MyDNA. This class helped me understand the structure of human DNA, genetics and history of human existence.
 
-+MATH441
++ MATH441
 
 This class helped me understand maths behind finance.
