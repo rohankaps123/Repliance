@@ -106,17 +106,19 @@ I was born and brought up in New Delhi, India and came into the United States 2 
 
 #CLASSES#
 
-* CS 121
-* CS 187
-* CS 230
-* CS 240
-* CS 220
++ CS 121
++ CS 187
++ CS 230
++ CS 240
++ CS 220
 
-* PHYSICS 281
+## Other Courses
+
++ PHYSICS 281
 
 This class helped me a lot with problem solving skill and simulating physical phenomenins. It was about computaional physics and it helped me visualize physical phenomenon.
 
-* PHYSICS 284
++ PHYSICS 284
 
 This class helped me learn more about thermodynamic properties of fluids! It helped me develop problem solving skills! It will help me with solving problems in our project!
 
@@ -128,13 +130,15 @@ I am a junior at University Of Massacheusetts Amherst. My major is computer scie
 
 #Classes#
 
-*CS220
-*CS240
++CS220
++CS240
 
-*BIO100
+## Other Courses
+
++BIO100
 
 The class is called MyDNA. This class helped me understand the structure of human DNA, genetics and history of human existence.
 
-*MATH441
++MATH441
 
 This class helped me understand maths behind finance.
