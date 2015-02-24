@@ -3,9 +3,13 @@
 ![logo] (/docs/squid.png)
 
 ### Area of Interest
-#### We're always interested in working with creating social and cultural connections between people
+
+#### We're interested in creating an app that will result in social and cultural connections between people. Specifically, we want to create an app through which a user can post a picture or question and ask for other users' advice. We want the posts and replies to be anonymous because we believe that users are more likely to provide genuine feedback anonymously because they would not have to worry about being associated with their responses. A post would also be removed from public view once it has generated enough comments, or has reached a time limit, which can be specified by the poster. After a post becomes unavailable to the public, the original poster would still be able to see the post and all comments it received.
+For example, if you post a question through Team Rocket's app asking if you should take Math 101 at UMass and choose to have the post removed from public view after ten minutes, other users  would get a notification that a new post has been posted. They would then be able to anonymously say what they thought of Math 101 without having to feel ashamed if they struggled with the material. After ten minutes, the post and all the comments would be visible only to you and you would be able to go through them at your convenience. 
+
 
 # Matt Fischer
+
 ## Bio
 
 My name is Matt Fischer. I am currently a junior Computer Science major with an IT minor. I am a second-year RA in a freshman building. I am from New Jersey, where I work as a waiter in a family burger restaurant.
