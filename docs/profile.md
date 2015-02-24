@@ -5,7 +5,7 @@
 ### Area of Interest
 
 #### We're interested in creating an app that will result in social and cultural connections between people. Specifically, we want to create an app through which a user can post a picture or question and ask for other users' advice. We want the posts and replies to be anonymous because we believe that users are more likely to provide genuine feedback anonymously because they would not have to worry about being associated with their responses. A post would also be removed from public view once it has generated enough comments, or has reached a time limit, which can be specified by the poster. After a post becomes unavailable to the public, the original poster would still be able to see the post and all comments it received.
-For example, if you post a question through Team Rocket's app asking if you should take Math 101 at UMass and choose to have the post removed from public view after ten minutes, other users  would get a notification that a new post has been posted. They would then be able to anonymously say what they thought of Math 101 without having to feel ashamed if they struggled with the material. After ten minutes, the post and all the comments would be visible only to you and you would be able to go through them at your convenience. 
+For example, if you post a question through Team Rocket's app asking if you should take Math 101 at UMass and choose to have the post removed from public view after ten minutes, other users  would get a notification that a new post has been posted. They would then be able to anonymously say what they thought of Math 101 without having to feel ashamed if they struggled with the material. After ten minutes, the post and all the comments would be visible only to you and you would be able to go through them at your convenience.
 
 
 # Matt Fischer
@@ -100,8 +100,9 @@ I'm a junior at UMASS Amherst, majoring in both Computer Science and Journalism.
 # ROHAN KAPOOR#
 
 #BIO#
+I am a sophomore majoring in Computer Science with a minor in Physics. I have worked with HTML, Javascript and SQL before but am not very proficient in them. I am more comfortable writing code in C, C++ and Java but I excited to learn more of the aforementioned languages. I am very interested in designing and am going to be developing the User interface of this app.
 
-I am a Sophomore at University of Massachusetts Amherst studying Computer Science and Physics. I am also an avid photographer and love reading books.
+I was born and brought up in New Delhi, India and came into the United States 2 years ago. I have always been interested in CompSci and in recent years I have developed a great interest in Photography and visual Design. I am also into robotics and have been playing around with ardruino's. Last year I was part of a team that developed a Micromouse, an autonomous robot, that solves a 16x16 maze without any user input. We won the first price in the IEEE MicroMouse Region 1 Competition using it. I am not very sure which field i would chooe to pursue further and am trying to explore everything that interests me.
 
 #CLASSES#
 
@@ -109,12 +110,12 @@ I am a Sophomore at University of Massachusetts Amherst studying Computer Scienc
 * CS 187
 * CS 230
 * CS 240
-
+* CS 220
 
 * PHYSICS 281
 
 This class helped me a lot with problem solving skill and simulating physical phenomenins. It was about computaional physics and it helped me visualize physical phenomenon.
- 
+
 * PHYSICS 284
 
 This class helped me learn more about thermodynamic properties of fluids! It helped me develop problem solving skills! It will help me with solving problems in our project!
@@ -127,12 +128,13 @@ I am a junior at University Of Massacheusetts Amherst. My major is computer scie
 
 #Classes#
 
-CS220                                                                                                                         
-CS240                                                                                                                                                                                                                                                        
-BIO100
- 
+*CS220
+*CS240
+
+*BIO100
+
 The class is called MyDNA. This class helped me understand the structure of human DNA, genetics and history of human existence.
 
-MATH441
-This class helped me understand maths behind finance.
+*MATH441
 
+This class helped me understand maths behind finance.

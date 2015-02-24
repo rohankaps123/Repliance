@@ -1,6 +1,6 @@
 ![repliance](squid_repliance.png)
 ###A Team Rocket Venture
- 
+
 ##Meet the Team
 
 #### James Desjardin: Back End Development, Database Development.
@@ -18,16 +18,26 @@ About me: I'm from Hingham, MA where I've lived for the latter half of my life, 
 ####Kalina Nedkova: Back End Development and Database Development
 I am a Senior majorning in Physics with a minor in both Computer Science and Math. Next year, I will be a physics graduate student (I am currently deciding between Syracuse and Georgetown) and I hope to be researching soft matter physics through computer simulations. I am most comfortable coding in C, python, and Java, but I look forward to learning more SQL and I am very interested in developing the database because I think this is an extremely useful skill to have. I hope that CS 187 and 230 help me understand some of the concepts behind developing our app.
 
-About me: I was born in Bulgaria, where I lived until the age of 7. When I moved to the US, I became more interested in the sciences than the humanities because I had a hard time reading and writing in English, but could easily solve math problems. I think this is why I ultimately chose to be a physics major. My sophomore year, I decided to get involved in research and I joined the UMass LIGO group, which is a physics research group that aims to detect gravitational waves. Gravitational waves were detected by Einstein but they have never been observed experimentally. After the first few weeks of getting acquainted with the kind of work that the LIGO group did, it became clear to me that computer science is absolutely necessary for any research in physics, which motivated to start working toward my CS minor. My CS courses have significantly helped me with my research, for which I am currently writing a script which produces a trigger every time excess power in the signal of the LIGO detectors is resolved. 
+About me: I was born in Bulgaria, where I lived until the age of 7. When I moved to the US, I became more interested in the sciences than the humanities because I had a hard time reading and writing in English, but could easily solve math problems. I think this is why I ultimately chose to be a physics major. My sophomore year, I decided to get involved in research and I joined the UMass LIGO group, which is a physics research group that aims to detect gravitational waves. Gravitational waves were detected by Einstein but they have never been observed experimentally. After the first few weeks of getting acquainted with the kind of work that the LIGO group did, it became clear to me that computer science is absolutely necessary for any research in physics, which motivated to start working toward my CS minor. My CS courses have significantly helped me with my research, for which I am currently writing a script which produces a trigger every time excess power in the signal of the LIGO detectors is resolved.
 
 ####Matt Fischer: Front-End Development, Back-End Development, UI
 
 I am a Junior at UMass Amherst. I am majoring in Computer Science, with a minor in Information Technology. I am very familiar with C, Java, Scala, and Python, with Javascript in the process of being learned.  I had some exposure to Computer Science in high school, where I realized it was what I wanted to major in in college. I am from Westwood, New Jersey, where I work as a waiter. I am also in my second year as a resident assistant in a freshman dorm. With multiple classes under my belt, I am confident that we will be able to turn Repliance into something amazing.
 
+####Rohan Kapoor: Front-End Development, UI
+
+I am a sophomore majoring in Computer Science with a minor in Physics. I have worked with HTML, Javascript and SQL before but am not very proficient in them. I am more comfortable writing code in C, C++ and Java but I excited to learn more of the aforementioned languages. In previous semesters, I have taken CS 187, CS230 and CS220, and i think they will help me work on the app we aim to develop. I am very interested in designing and am going to be developing the User interface of this app.
+
+I was born and brought up in New Delhi, India and came into the United States 2 years ago. I have always been interested in CompSci and in recent years I have developed a great interest in Photography and visual Design. I am also into robotics and have been playing around with ardruino's. Last year I was part of a team that developed a Micromouse, an autonomous robot, that solves a 16x16 maze without any user input. We won the first price in the IEEE MicroMouse Region 1 Competition using it. I am not very sure which field i would chooe to pursue further and am trying to explore everything that interests me.
+
+####Kavya Krishna: Back-End Development
+
+I am a junior at University Of Massacheusetts Amherst. My major is computer science.I am an international transfer. I am a classical dancer and love solving puzzles.
+
 ##Problem Statement
 ####Author: Colin McGinnis 2/22/2015
 
-Often times, we feel our friends aren't being completely truthful when we ask for advice or critiques. For example, when someone asks a friend if what they are wearing looks good, the friend may be more inclined to say yes, no matter how it actually looks. In the classes that our group has taken in the past, such as Anthropology 100 and Psychology 100, it has become clear that some of the most helpful and true advice comes from people who have a neutral view of you, who don't yet know you. Through those two classes, we've found that people are their most truthful when anonymous. 
+Often times, we feel our friends aren't being completely truthful when we ask for advice or critiques. For example, when someone asks a friend if what they are wearing looks good, the friend may be more inclined to say yes, no matter how it actually looks. In the classes that our group has taken in the past, such as Anthropology 100 and Psychology 100, it has become clear that some of the most helpful and true advice comes from people who have a neutral view of you, who don't yet know you. Through those two classes, we've found that people are their most truthful when anonymous.
 
 When you don't have stock in a relationship, and a critique may not be overtly positive, it becomes easier to give that critique. What our startup hopes to do, through the skills from the CS courses we've taken, is create a place where people can get completely unbiased advice on the decisions they are thinking of making. CS 345 has given us knowledge of databases that we'll use in solving the problem and classes like CS 187 and 220 have provided us with the skills to create custom data structures and utilize design strategies that will help make our app more efficient.
 
