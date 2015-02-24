@@ -25,4 +25,5 @@ Posts will be sorted in the inbox feed by "least time left" and "least replies n
 
 # Original Proposal
 
-Please review proposal.md 
+We believe that the final version of Repliance can be completed by April 25, 2015. We are asking for $36,000 for a period of 3 months. 
+For more details, please review proposal.md, which is located: team-rocket/docs/proposal/proposal.md 
