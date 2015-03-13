@@ -30,4 +30,4 @@ For more details, please review proposal.md, which is located: team-rocket/docs/
 
 #Updates
 
-On 3/13/15, the both the functional documentation detailing usage of Repliance and a slideshow detailing this document was added.
+On 3/13/15, both the functional documentation detailing usage of Repliance and a slideshow detailing this document was added.
