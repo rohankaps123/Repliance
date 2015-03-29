@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script>
+      function hello(name) {
+        console.log("hello " + name);
+      }
+
+      function writeList(xs) {
+        document.write('<ul>');
+	for (var i = 0; i < xs.length; i++) {
+	  document.write('<li>' + xs[i] + '</li>');
+	}
+	document.write('</ul>');
+      }
+    </script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+</html>
