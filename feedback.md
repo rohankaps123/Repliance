@@ -8,6 +8,11 @@ allowed to modify and update this file with information that will
 comments and guidance on your project.
 ***
 
+# Project 3
+
+**Overall:** I think you all did a pretty good job on this. Everything was presented nicely. Your flowchart looks good, the scenarios were fine, and the screen by screen was good overall as well. Keep up the work and I look forward to seeing what you all can do.
+
+
 # Project: Proposal
 
 **Overall:** Great job! The formatting of the document was great. Your logo is nice and clean and the bios of each person are much better than last time as well! The idea seems interesting and I am curious to see how this is going to look in its implementation. 
