@@ -1,25 +1,4 @@
-<<<<<<< HEAD
 var express		= require('express');
-=======
-<<<<<<< HEAD
-// Require the express library:
-var express = require('express');
-// Create an app:
-var app = express();
-// Static file serving:
-app.use(express.static(__dirname + '/public'));
-// Start the server:
-var server = app.listen(3000, function () {
-console.log('Listening on port %d', server.address().port);
-});
-=======
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
->>>>>>> 20e76cc3d5a700a676ea12e7cc1b90ac5d41d168
 
 // Requiring session library:
 var session		= require('express-session');
@@ -103,4 +82,3 @@ app.use(function(err, req, res, next) {
 
 // Export the app as the module:
 module.exports = app;
->>>>>>> ad915665049b4b9e4db77a06a3bf375b0be46876
