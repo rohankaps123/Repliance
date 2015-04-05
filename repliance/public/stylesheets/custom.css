@@ -1,0 +1,19 @@
+body .h1{
+	color: red;
+}
+
+body {
+	background-color: blue;
+}
+
+body .jumbotron h1,
+body .jumbotron .h1{
+	color: red;
+	font-family: 'Arial';
+	font-size: 16px;
+}
+
+.oatmeal {
+	color: red !important;
+	font-family: 'Arial'l;
+}
