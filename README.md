@@ -31,3 +31,5 @@ For more details, please review proposal.md, which is located: team-rocket/docs/
 #Updates
 
 On 3/13/15, both the functional documentation detailing usage of Repliance and a slideshow detailing this document was added.
+
+On 04/10/15, the dspec.pdf and slides.pdf files were added into the dspec folder and our team notes were udpated.
