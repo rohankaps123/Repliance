@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+.navbar {
+	width: 300px;
+	height: 900px;
+	background-color: #E5E4E2;
+	top: 0px;
+	right: 0px;
+	position: absolute;
+}
