@@ -1,0 +1,22 @@
+//authored by jamesd
+// from within terminal type
+
+sudo -u postgres psql
+
+//now connnected to postgres
+
+create database repliance owner postgres;
+
+//to list databases
+
+\l
+
+//press \q to quit list of databases
+
+//to connect to repliance database
+
+\connect repliance
+
+//run the instructions in schema.sql
+
+//enter \dt to see all tables
