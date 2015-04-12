@@ -46,7 +46,6 @@ app.get('/', function (req, res) {
   res.redirect('/user/login');
 });
 
-
 ///////////////////
 // EVERYTHING BELOW HELPS WITH MISSING ROUTES
 ///////////////////

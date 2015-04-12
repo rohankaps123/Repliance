@@ -106,4 +106,8 @@ router.get('/online', function(req, res) {
                          users : online });
 });
 
+router.get('/account', function(req, res) {
+  res.render('account', { title : 'Account'});
+});
+
 module.exports = router;
