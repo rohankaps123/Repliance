@@ -8,10 +8,24 @@ a {
 }
 
 .navbar {
-	width: 300px;
-	height: 900px;
+	width: 200px;
+	height: 100%;
 	background-color: #E5E4E2;
 	top: 0px;
 	right: 0px;
 	position: absolute;
+}
+
+.navElements{
+	list-style-type: none;
+	font-size: 20px;
+	font-family: 'Arial';
+	text-decoration: none;
+	display: block;
+}
+
+
+
+.navElements > li > a {
+	text-decoration: none;
 }
