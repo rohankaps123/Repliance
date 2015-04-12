@@ -110,6 +110,16 @@ router.get('/account', function(req, res) {
   res.render('account', { title : 'Account'});
 });
 
+router.get('/myquestions', function(req, res) {
+  res.render('myquestions', { title : 'My Questions'});
+});
 
+router.get('/myanswers', function(req, res) {
+  res.render('myanswers', { title : 'My Answers'});
+});
+
+router.get('/askquestion', function(req, res) {
+  res.render('askquestion', { title : 'Ask Question'});
+});
 
 module.exports = router;
