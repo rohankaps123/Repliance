@@ -101,25 +101,51 @@ router.get('/main', function(req, res) {
   }
 });
 
-router.get('/online', function(req, res) {
-  res.render('online', { title : 'Users Online',
-                         users : online });
-});
-
 router.get('/account', function(req, res) {
+
+  var user = req.session.user;
+  if (user === undefined || online[user.uid] === undefined) {
+    req.flash('auth', 'Not logged in!');
+    res.redirect('/user/login');
+  }
+  else {
   res.render('account', { title : 'Account'});
+}
 });
 
 router.get('/myquestions', function(req, res) {
+
+  var user = req.session.user;
+  if (user === undefined || online[user.uid] === undefined) {
+    req.flash('auth', 'Not logged in!');
+    res.redirect('/user/login');
+  }
+  else {
   res.render('myquestions', { title : 'My Questions'});
+}
 });
 
 router.get('/myanswers', function(req, res) {
+
+  var user = req.session.user;
+  if (user === undefined || online[user.uid] === undefined) {
+    req.flash('auth', 'Not logged in!');
+    res.redirect('/user/login');
+  }
+  else {
   res.render('myanswers', { title : 'My Answers'});
+}
 });
 
 router.get('/askquestion', function(req, res) {
+  var user = req.session.user;
+  if (user === undefined || online[user.uid] === undefined) {
+    req.flash('auth', 'Not logged in!');
+    res.redirect('/user/login');
+  }
+  else {
   res.render('askquestion', { title : 'Ask Question'});
+}
 });
 
 module.exports = router;
