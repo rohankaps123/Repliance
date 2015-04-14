@@ -1,6 +1,6 @@
 var pg = require('pg');
 
-var cstr = 'postgres://student:student@localhost/users';
+var cstr = 'postgres://postgres:postgres@localhost/repliance';
 
 /**
  * This function adds a user to the database.
@@ -13,10 +13,11 @@ function add(user, cb) {
 		else {
 			var qstring = 'insert into users values(' +
 							user.uid + ',\'' +
-							user.fname + '\',\'' +
-							user.lname + '\',\'' +							
-							user.password + '\',' +
-							user.age + ')';
+							user.username + ',\''
+							user.password + '\',\'' +
+							user.fname + '\',\'' +							
+							user.lname + '\',' +
+							user.score + ')';
 			client.query(qstring, function(err, result) {
 				done();
 				client.end();
