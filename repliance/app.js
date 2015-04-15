@@ -19,6 +19,10 @@ var users		= require('./routes/users');
 // Create the express application:
 var app			= express();
 
+// Require database
+var db = require('db');
+
+
 // Setup the view engine:
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
