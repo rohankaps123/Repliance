@@ -41,6 +41,7 @@ function list(cb) {
 			client.query('select * from users', function(err, result) {
 				done();
 				client.end();
+				console.log(result.rows);
 				if (err) {
 					cb(err);
 				}

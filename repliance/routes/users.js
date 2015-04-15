@@ -102,15 +102,31 @@ router.get('/main', function(req, res) {
   }
 });
 
+///////////////////////////////////////////////////////
+///////////                                 ///////////
+///////////            ACCOUNT              ///////////
+///////////                                 ///////////
+///////////////////////////////////////////////////////
+
 router.get('/account', function(req, res) {
 
   var user = req.session.user;
+  var usersDB = 'what';
+
+  dblib.list(function(data){
+    //this doesn't work, can't get object returned by dblib.list
+    usersDB = data;
+  });
+
+  console.log('hi ' + usersDB);
+
   if (user === undefined || online[user.uid] === undefined) {
     req.flash('auth', 'Not logged in!');
     res.redirect('/user/login');
   }
   else {
-  res.render('account', { title : 'Account'});
+  res.render('account', { title : 'Account',
+                          people: usersDB });
 }
 });
 
