@@ -1,7 +1,7 @@
 var express		= require('express');
 
 // Require database
-//var db = require('./lib/db');
+var db = require('./lib/db');
 
 // Requiring session library:
 var session		= require('express-session');
