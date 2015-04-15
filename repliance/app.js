@@ -1,5 +1,8 @@
 var express		= require('express');
 
+// Require database
+//var db = require('./lib/db');
+
 // Requiring session library:
 var session		= require('express-session');
 
@@ -18,10 +21,6 @@ var users		= require('./routes/users');
 
 // Create the express application:
 var app			= express();
-
-// Require database
-var db = require('db');
-
 
 // Setup the view engine:
 app.set('views', path.join(__dirname, 'views'));

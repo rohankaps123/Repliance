@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var userlib = require('../lib/user');
+var dblib = require('../lib/db');
 
 // A logged in "database":
 var online = {};
