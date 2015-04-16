@@ -111,24 +111,44 @@ router.get('/main', function(req, res) {
 router.get('/account', function(req, res) {
 
   var user = req.session.user;
-  var usersDB = 'what';
+  var userData;
 
   dblib.list(function(data){
-    //this doesn't work, can't get object returned by dblib.list
-    usersDB = data;
-  });
 
-  console.log('hi ' + usersDB);
+    var element = Object.keys(data[0]);
 
+    var d = data[0];
+
+    var uid = d[element[0]];
+    var usn = d[element[1]];
+
+    console.log('data: ' + uid + ' ' + usn);
+
+    userData = usn;
+
+//chunk
   if (user === undefined || online[user.uid] === undefined) {
     req.flash('auth', 'Not logged in!');
     res.redirect('/user/login');
   }
   else {
-  res.render('account', { title : 'Account',
-                          people: usersDB });
-}
+    res.render('account', { title : 'Account',
+                            people: userData});
+  }
+//chunk
+
+  });
+
+//chunk
+
 });
+
+
+
+
+
+
+
 
 router.get('/myquestions', function(req, res) {
 
