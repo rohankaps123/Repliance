@@ -7,6 +7,20 @@ a {
   color: #00B7FF;
 }
 
+.logAndAdd {
+	text-align: center;
+    position: relative;
+    margin-left: auto;
+   	margin-right: auto;
+   	width: 225px;
+   	height: 300px;
+}
+
+.logElements{
+	text-align: left;
+	width: 200px;
+}
+
 .navbar {
 	width: 200px;
 	height: 100%;

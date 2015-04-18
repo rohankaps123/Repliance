@@ -2,28 +2,31 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'/>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+  <div class="logAndAdd">
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
     <div><%= message %></div><br>
 
-    <form method="post" action="/user/auth">
-      User Name: <input type="text" name="username"> <br>
+    <form method="post" action="/user/auth" class="logElements">
+      User Name: <input type="text" name="username"> <br> 
       Password:  <input type="password" name="password"> <br>
       <button>Login</button>
     </form>
 
     <p>Make an account below!</p>
 
-    <form method="post" action="/user/create">
+    <form method="post" action="/user/create" class="logElements">
       User Name: <input type="text" name="username" maxlength="20"> <br>
       Password:  <input type="password" name="password" maxlength="50"> <br>
       First Name: <input type="text" name="fname" maxlength="50"> <br>
       Last Name: <input type="text" name="fname" maxlength="50"> <br>
       <button>Sign Up</button>
+    </div>
     </form>
   </body>
 </html>
