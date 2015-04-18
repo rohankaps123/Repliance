@@ -34,28 +34,21 @@ function add(user, cb) {
  */
 
 function lookup(username, password, cb) {
-	console.log("Real database lookup invoked");
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
 			cb(err);
 		}
 		else {
 			var qstring = 'select * from users where username = \'' + username + '\'';
-			console.log(qstring);
 			client.query(qstring, function(err, result) {
-				console.log(result.rows);
 				done();
 				client.end();
 				if (err) {
-					console.log("error in index.js");
 					cb(err);
 				}
 				else{
-					console.log("Else...");
 					if (result.rows !== undefined){
-						console.log("If...");
 						if((result.rows[0].password === password) && (result.rows[0].username === username)){
-							console.log("user correct info");
 							cb(undefined, result.rows[0]);
 						}
 					}
