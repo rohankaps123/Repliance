@@ -85,4 +85,59 @@ router.get('/logout', function(req, res) {
   res.redirect('/user/login');
 });
 
+router.post('/create', function(req, res){
+  var user = req.session.user;
+  if (user !== undefined && online[user.uid] !== undefined) {
+    res.redirect('/main');
+  }
+  else {
+    var usernmae = req.body.username;
+    var password = req.body.password;
+    var fname = req.body.fname;
+    var lname = req.body.lname;
+
+    if(username === '' || password == ''){
+      res.flash('auth', 'Fields must not be blank');
+      res.redirect('/user/login');
+    }
+    else if(!alphanum(username) || !alphanum(password) || !alphanum(fname) || !alphanum(lname)){
+      res.flash('auth', 'Fields must contain only letters and numbers');
+      res.redirect('/user/login');
+    }
+    else{
+
+      dblib.lookup(username, password, function(error, user){
+        if(error === undefined){
+          res.flash('auth', 'User already exists');
+          res.redirect('/user/login');
+        }
+        else{
+          dblib.add(username, password, fname, lname, function(error, user) {
+            if(error) {
+              res.flash('auth', error);
+              res.redirect('/user/login');
+            }
+            else{
+              req.session.user = user;
+              online[user.uid] = user;
+              res.redirect('/main');
+            }
+          });
+        }
+      });
+    }
+  }
+});
+
+function alphanum(input){
+  var legal = /^[A-Za-z0-9]+$/;
+
+  if(legal.test(input)){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
 module.exports = router;
