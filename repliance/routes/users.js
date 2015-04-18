@@ -112,16 +112,19 @@ router.post('/create', function(req, res){
           res.redirect('/user/login');
         }
         else{
-          dblib.add(username, password, fname, lname, function(error, user) {
+
+          db.generateUID(function(uid){
+            dblib.add(uid, username, password, fname, lname, function(error, user) {
             if(error) {
-              res.flash('auth', error);
-              res.redirect('/user/login');
-            }
-            else{
-              req.session.user = user;
-              online[user.uid] = user;
-              res.redirect('/main');
-            }
+                res.flash('auth', error);
+                res.redirect('/user/login');
+              }
+              else{
+                req.session.user = user;
+                online[user.uid] = user;
+                res.redirect('/main');
+              }
+            });       
           });
         }
       });
