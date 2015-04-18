@@ -5,6 +5,7 @@ var dblib = require('../lib/db');
 
 // A logged in "database":
 var online = {};
+router.online = online;
 
 // # User Server-Side Routes
 
@@ -23,7 +24,7 @@ router.get('/login', function(req, res){
   // the cookie may still be stored on the client even if the
   // server has been restarted.
   if (user !== undefined && online[user.uid] !== undefined) {
-    res.redirect('/user/main');
+    res.redirect('/main');
   }
   else {
     // Render the login view if this is a new login.
@@ -40,7 +41,7 @@ router.post('/auth', function(req, res) {
 
   // do the check as described in the `exports.login` function.
   if (user !== undefined && online[user.uid] !== undefined) {
-    res.redirect('/user/main');
+    res.redirect('/main');
   }
   else {
     // Pull the values from the form.
@@ -59,11 +60,10 @@ router.post('/auth', function(req, res) {
         // Store the user in our in memory database.
         online[user.uid] = user;
         // Redirect to main.
-        res.redirect('/user/main');
+        res.redirect('/main');
       }
     });
   }
-
 });
 
 
@@ -85,22 +85,7 @@ router.get('/logout', function(req, res) {
   res.redirect('/user/login');
 });
 
-// ## main
-// The main user view.
-router.get('/main', function(req, res) {
-  // added session support
-  var user = req.session.user;
-  if (user === undefined || online[user.uid] === undefined) {
-    req.flash('auth', 'Not logged in!');
-    res.redirect('/user/login');
-  }
-  else {
-    res.render('main', { title   : 'User Main',
-                         message : 'Login Successful',
-                         username : user.username,
-                         password : user.password });
-  }
-});
+
 
 ///////////////////////////////////////////////////////
 ///////////                                 ///////////
