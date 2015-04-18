@@ -48,6 +48,7 @@ app.use(flash());
 app.use('/user', users);
 app.use('/main', main);
 app.use('/myquestions', quest);
+app.use('/account', acc);
 
 app.get('/', function (req, res) {
   res.redirect('/user/login');
