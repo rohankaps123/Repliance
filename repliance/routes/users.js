@@ -113,30 +113,6 @@ router.get('/account', function(req, res) {
   var user = req.session.user;
   var userData;
 
-  /*dblib.list(function(data){
-
-    var element = Object.keys(data[0]);
-
-    var d = data[0];
-
-    var uid = d[element[0]];
-    var usn = d[element[1]];
-
-    console.log('data: ' + uid + ' ' + usn);
-
-    userData = usn;
-
-    if (user === undefined || online[user.uid] === undefined) {
-      req.flash('auth', 'Not logged in!');
-      res.redirect('/user/login');
-    }
-    else {
-      res.render('account', { title : 'Account',
-                            people: userData});
-    }
-
-  });*/
-
   dblib.accountInfo(user, function(data){
 
     var element = Object.keys(data[0]);
@@ -169,13 +145,6 @@ router.get('/account', function(req, res) {
   });
 
 });
-
-
-
-
-
-
-
 
 router.get('/myquestions', function(req, res) {
 
