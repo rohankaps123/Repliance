@@ -92,7 +92,7 @@ function accountInfo(user, cb){
 			cb(err);
 		}
 		else{
-			client.query(('select * from users where uid=' + user), function(err, result){
+			client.query(('select * from users where username=' + '\'' + user + '\''), function(err, result){
 				done();
 				client.end();
 				if (err){
