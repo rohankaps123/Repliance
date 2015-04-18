@@ -93,6 +93,7 @@ router.post('/auth', function(req, res) {
       }
       else {
         console.log("Should be sent to main now");
+        console.log(user);
         req.session.user = user;
         // Store the user in our in memory database.
         online[user.uid] = user;

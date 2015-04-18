@@ -56,7 +56,7 @@ function lookup(username, password, cb) {
 						console.log("If...");
 						if((result.rows[0].password === password) && (result.rows[0].username === username)){
 							console.log("user correct info");
-							cb(undefined, result.rows[0].username);
+							cb(undefined, result.rows[0]);
 						}
 					}
 				}
