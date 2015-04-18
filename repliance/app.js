@@ -21,6 +21,8 @@ var users		= require('./routes/users');
 var main        = require('./routes/main');
 var quest       = require('./routes/myquestions');
 var acc         = require('./routes/account');
+var ans         = require('./routes/myanswers');
+var ask         = require('./routes/askquestion');
 // Create the express application:
 var app			= express();
 
@@ -49,6 +51,8 @@ app.use('/user', users);
 app.use('/main', main);
 app.use('/myquestions', quest);
 app.use('/account', acc);
+app.use('/myanswers', ans);
+app.use('/askquestion', ask);
 
 app.get('/', function (req, res) {
   res.redirect('/user/login');
