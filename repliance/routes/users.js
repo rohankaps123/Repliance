@@ -113,7 +113,7 @@ router.get('/account', function(req, res) {
   var user = req.session.user;
   var userData;
 
-  dblib.list(function(data){
+  /*dblib.list(function(data){
 
     var element = Object.keys(data[0]);
 
@@ -134,6 +134,37 @@ router.get('/account', function(req, res) {
       res.render('account', { title : 'Account',
                             people: userData});
     }
+
+  });*/
+
+  dblib.accountInfo(user, function(data){
+
+    var element = Object.keys(data[0]);
+
+    var row = data[0];
+
+    var uid = row[element[0]];
+    var username = row[element[1]];
+    var password = row[element[2]];
+    var fname = row[element[3]];
+    var lname = row[element[4]];
+    var score = row[element[5]];
+
+    if (user === undefined || online[user.uid] === undefined) {
+      req.flash('auth', 'Not logged in!');
+      res.redirect('/user/login');
+    }
+    else {
+      res.render('account', { title   : 'Account',
+                            username  : username,
+                            password  : password,
+                            fname     : fname,
+                            lname     : lname,
+                            score     : score
+
+                          });
+    }
+
 
   });
 

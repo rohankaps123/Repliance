@@ -92,7 +92,8 @@ function accountInfo(user, cb){
 			cb(err);
 		}
 		else{
-			client.query(('select * from users where username=' + '\'' + user + '\''), function(err, result){
+			client.query(('select * from users where username=' + '\'' + user.username + '\''), function(err, result){
+				console.log('select * from users where username=' + '\'' + user.username + '\'');
 				done();
 				client.end();
 				if (err){
@@ -108,7 +109,8 @@ function accountInfo(user, cb){
 
 
 module.exports = {
-  add     	: add,
-  lookup	: lookup,
-  list    	: list,
+  add     		: add,
+  lookup		: lookup,
+  accountInfo	: accountInfo,
+  list    		: list,
 };
