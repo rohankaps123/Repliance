@@ -5,19 +5,21 @@ var cstr = 'postgres://postgres:postgres@localhost/repliance';
 /**
  * This function adds a user to the database.
  */
-function add(user, cb) {
+
+function add(uid, username, password, fname, lname, cb) {
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
 			cb(err);
 		}
 		else {
+
 			var qstring = 'insert into users values(' +
-							user.uid + ',\'' +
-							user.username + ',\''
-							user.password + '\',\'' +
-							user.fname + '\',\'' +							
-							user.lname + '\',' +
-							user.score + ')';
+							uid + ',\'' +
+							username + ',\''
+							password + '\',\'' +
+							fname + '\',\'' +							
+							lname + '\',' +
+							score + ')';
 			client.query(qstring, function(err, result) {
 				done();
 				client.end();
@@ -57,6 +59,32 @@ function lookup(username, password, cb) {
 		}
 	});
 }
+
+
+function generateUID(cb){
+
+	pg.connect(cstr, function(err, client, done) {
+		if (err) {
+			cb(err);
+		}
+		else {
+			var qstring = 'select * from users order by uid desc';
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				if(err){
+					cb(err);
+				}
+				else{
+					var newUID = result.rows[0].uid + 1;
+					cb(newUID);
+				}
+			});
+		}
+	}
+}
+
+
 
 /**
  * This function returns a list of all users in the database.
