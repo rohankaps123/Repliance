@@ -12,36 +12,42 @@ var online = users.online;
 router.get('/', function(req, res) {
 
   var user = req.session.user;
-  var userData;
 
-  dblib.accountInfo(user, function(data){
+  if (user === undefined || online[user.uid] === undefined) {
+    req.flash('auth', 'Not logged in!');
+    res.redirect('/user/login');
+  }
+  else{
 
-    var element = Object.keys(data[0]);
+    dblib.accountInfo(user, function(data){
 
-    var row = data[0];
+      var element = Object.keys(data[0]);
 
-    var uid = row[element[0]];
-    var username = row[element[1]];
-    var password = row[element[2]];
-    var fname = row[element[3]];
-    var lname = row[element[4]];
-    var score = row[element[5]];
+      var row = data[0];
 
-    if (user === undefined || online[user.uid] === undefined) {
-      req.flash('auth', 'Not logged in!');
-      res.redirect('/user/login');
-    }
-    else {
-      res.render('account', { title   : 'Account',
-                            username  : username,
-                            password  : password,
-                            fname     : fname,
-                            lname     : lname,
-                            score     : score
+      var uid = row[element[0]];
+      var username = row[element[1]];
+      var password = row[element[2]];
+      var fname = row[element[3]];
+      var lname = row[element[4]];
+      var score = row[element[5]];
 
-                          });
-    }
-  });
+      if (user === undefined || online[user.uid] === undefined) {
+        req.flash('auth', 'Not logged in!');
+        res.redirect('/user/login');
+      }
+      else {
+        res.render('account', { title   : 'Account',
+                              username  : username,
+                              password  : password,
+                              fname     : fname,
+                              lname     : lname,
+                              score     : score
+
+                            });
+      }
+    });
+  }
 });
 
 module.exports = router;
