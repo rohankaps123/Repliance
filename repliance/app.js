@@ -19,7 +19,7 @@ var bodyParser		= require('body-parser');
 // Our user-defined routes/middleware:
 var users		= require('./routes/users');
 var main        = require('./routes/main');
-var quest       = require('./routes/myquestion');
+var quest       = require('./routes/myquestions');
 var acc         = require('./routes/account');
 // Create the express application:
 var app			= express();
@@ -47,7 +47,7 @@ app.use(flash());
 // Using our routes/middleware:
 app.use('/user', users);
 app.use('/main', main);
-app.use('/myquestion', quest);
+app.use('/myquestions', quest);
 
 app.get('/', function (req, res) {
   res.redirect('/user/login');
