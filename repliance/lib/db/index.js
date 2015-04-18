@@ -30,6 +30,42 @@ function add(user, cb) {
 }
 
 /**
+ * This function looks up a particular user in the databse (login/authentication)
+ */
+
+function lookup(username, password, cb) {
+	console.log("Real database lookup invoked");
+	pg.connect(cstr, function(err, client, done) {
+		if (err) {
+			cb(err);
+		}
+		else {
+			var qstring = 'select * from users where username = \'' + username + '\'';
+			console.log(qstring);
+			client.query(qstring, function(err, result) {
+				console.log(result.rows);
+				done();
+				client.end();
+				if (err) {
+					console.log("error in index.js");
+					cb(err);
+				}
+				else{
+					console.log("Else...");
+					if (result.rows !== undefined){
+						console.log("If...");
+						if((result.rows[0].password === password) && (result.rows[0].username === username)){
+							console.log("user correct info");
+							cb(undefined, result.rows[0].username);
+						}
+					}
+				}
+			});
+		}
+	});
+}
+
+/**
  * This function returns a list of all users in the database.
  */
 function list(cb) {
@@ -79,6 +115,7 @@ function accountInfo(user, cb){
 
 
 module.exports = {
-  add     : add,
-  list    : list,
+  add     	: add,
+  lookup	: lookup,
+  list    	: list,
 };

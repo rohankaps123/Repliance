@@ -36,6 +36,8 @@ router.get('/login', function(req, res){
 // ## auth
 // Performs **basic** user authentication.
 router.post('/auth', function(req, res) {
+
+  /**
   // redirect if logged in:
   var user = req.session.user;
 
@@ -64,6 +66,51 @@ router.post('/auth', function(req, res) {
       }
     });
   }
+
+  **/
+
+  //NEW AUTH CODE//
+
+  var user = req.session.user;
+
+  // do the check as described in the `exports.login` function.
+  if (user !== undefined && online[user.uid] !== undefined) {
+    res.redirect('/user/main');
+  }
+  else {
+    // Pull the values from the form.
+    var username = req.body.username;
+    var password = req.body.password;
+    // Perform the user lookup.
+    dblib.lookup(username, password, function(error, user) {
+      console.log("Database looked up from users.js");
+      if (error) {
+        console.log("error oh no");
+        // If there is an error we "flash" a message to the
+        // redirected route `/user/login`.
+        req.flash('auth', error);
+        res.redirect('/user/login');
+      }
+      else {
+        console.log("Should be sent to main now");
+        req.session.user = user;
+        // Store the user in our in memory database.
+        online[user.uid] = user;
+        // Redirect to main.
+        res.redirect('/user/main');
+      }
+    });
+  }
+
+
+
+
+
+
+
+
+
+
 });
 
 

@@ -21,6 +21,7 @@ var userdb = [
 // signature cb(error, userobj).
 //
 exports.lookup = function(username, password, cb) {
+  console.log("Old user lookup called");
   var len = userdb.length;
   for (var i = 0; i < len; i++) {
     var u = userdb[i];
