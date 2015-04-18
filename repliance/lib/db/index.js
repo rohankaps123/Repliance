@@ -81,7 +81,7 @@ function generateUID(cb){
 				}
 			});
 		}
-	}
+	});
 }
 
 
