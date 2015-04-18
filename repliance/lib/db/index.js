@@ -52,6 +52,31 @@ function list(cb) {
 	});
 }
 
+/**
+* 
+ */
+function accountInfo(user, cb){
+
+	pg.connect(cstr, function(err, client, done){
+
+		if(err){
+			cb(err);
+		}
+		else{
+			client.query(('select * from users where uid=' + user), function(err, result){
+				done();
+				client.end();
+				if (err){
+					cb(err);
+				}
+				else{
+					cb(result.rows);
+				}
+			});
+		}
+	});
+}
+
 
 module.exports = {
   add     : add,

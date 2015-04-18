@@ -126,20 +126,16 @@ router.get('/account', function(req, res) {
 
     userData = usn;
 
-//chunk
-  if (user === undefined || online[user.uid] === undefined) {
-    req.flash('auth', 'Not logged in!');
-    res.redirect('/user/login');
-  }
-  else {
-    res.render('account', { title : 'Account',
+    if (user === undefined || online[user.uid] === undefined) {
+      req.flash('auth', 'Not logged in!');
+      res.redirect('/user/login');
+    }
+    else {
+      res.render('account', { title : 'Account',
                             people: userData});
-  }
-//chunk
+    }
 
   });
-
-//chunk
 
 });
 
