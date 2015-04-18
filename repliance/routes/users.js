@@ -14,6 +14,7 @@ router.online = online;
 router.get('/login', function(req, res){
   // Grab any messages being sent to use from redirect.
   var authmessage = req.flash('auth') || '';
+  var makemessage = req.flash('createauth') || '';
 
   // TDR: redirect if logged in:
   var user  = req.session.user;
@@ -29,7 +30,8 @@ router.get('/login', function(req, res){
   else {
     // Render the login view if this is a new login.
     res.render('login', { title   : 'User Login',
-                          message : authmessage });
+                          message : authmessage,
+                          createmessage : makemessage });
   }
 });
 
@@ -91,32 +93,31 @@ router.post('/create', function(req, res){
     res.redirect('/main');
   }
   else {
-    var usernmae = req.body.username;
+    var username = req.body.username;
     var password = req.body.password;
     var fname = req.body.fname;
     var lname = req.body.lname;
 
     if(username === '' || password == ''){
-      res.flash('auth', 'Fields must not be blank');
+      req.flash('createauth', 'Fields must not be blank');
       res.redirect('/user/login');
     }
-    else if(!alphanum(username) || !alphanum(password) || !alphanum(fname) || !alphanum(lname)){
-      res.flash('auth', 'Fields must contain only letters and numbers');
+    else if(/[^A-Za-z0-9]/.test(username) || /[^A-Za-z0-9]/.test(password) || /[^A-Za-z0-9]/.test(fname) || /[^A-Za-z0-9]/.test(lname)){
+      req.flash('createauth', 'Fields must contain only letters and numbers');
       res.redirect('/user/login');
     }
     else{
 
       dblib.lookup(username, password, function(error, user){
         if(error === undefined){
-          res.flash('auth', 'User already exists');
+          req.flash('createauth', 'User already exists');
           res.redirect('/user/login');
         }
         else{
-
-          db.generateUID(function(uid){
+          dblib.generateUID(function(uid){
             dblib.add(uid, username, password, fname, lname, function(error, user) {
             if(error) {
-                res.flash('auth', error);
+                req.flash('createauth', error);
                 res.redirect('/user/login');
               }
               else{
@@ -131,16 +132,5 @@ router.post('/create', function(req, res){
     }
   }
 });
-
-function alphanum(input){
-  var legal = /^[A-Za-z0-9]+$/;
-
-  if(legal.test(input)){
-    return true;
-  }
-  else{
-    return false;
-  }
-}
 
 module.exports = router;

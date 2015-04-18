@@ -12,20 +12,26 @@ function add(uid, username, password, fname, lname, cb) {
 			cb(err);
 		}
 		else {
-
+			console.log('we got here now');
 			var qstring = 'insert into users values(' +
 							uid + ',\'' +
 							username + ',\''
 							password + '\',\'' +
 							fname + '\',\'' +							
 							lname + '\',' +
-							score + ')';
+							'0)';
+			console.log('we got here now6');
+			console.log(qstring);
 			client.query(qstring, function(err, result) {
+				console.log('we got here now2');
 				done();
+				console.log('we got here now3');
 				client.end();
+				console.log('we got here now4');
 				if (err) {
 					cb(err);
 				}
+				console.log('we got here now5');
 			});
 		}
 	});
@@ -43,16 +49,24 @@ function lookup(username, password, cb) {
 		else {
 			var qstring = 'select * from users where username = \'' + username + '\'';
 			client.query(qstring, function(err, result) {
+				console.log(result);
 				done();
 				client.end();
 				if (err) {
 					cb(err);
 				}
 				else{
-					if (result.rows !== undefined){
+					if (result.rows[0] !== undefined){
 						if((result.rows[0].password === password) && (result.rows[0].username === username)){
 							cb(undefined, result.rows[0]);
 						}
+						else{
+							cb(err);
+						}
+					}
+					else{
+						console.log('we got here');
+						cb('User does not exist');
 					}
 				}
 			});
@@ -62,22 +76,28 @@ function lookup(username, password, cb) {
 
 
 function generateUID(cb){
-
+	console.log('got to start of uid gen');
 	pg.connect(cstr, function(err, client, done) {
+		console.log('got to start of uid gen connect');
 		if (err) {
 			cb(err);
 		}
 		else {
 			var qstring = 'select * from users order by uid desc';
 			client.query(qstring, function(err, result){
+				console.log(result);
+				console.log('got to start of uid gen query');
 				done();
 				client.end();
+				console.log(result.rows[0].uid);
 				if(err){
+					console.log('got to uid gen query err');
 					cb(err);
 				}
 				else{
 					var newUID = result.rows[0].uid + 1;
-					cb(newUID);
+					console.log(newUID);
+					cb(undefined, newUID);
 				}
 			});
 		}
@@ -141,4 +161,5 @@ module.exports = {
   lookup		: lookup,
   accountInfo	: accountInfo,
   list    		: list,
+  generateUID   : generateUID,
 };

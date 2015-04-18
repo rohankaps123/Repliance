@@ -17,12 +17,13 @@
     </form>
 
     <p>Make an account below!</p>
+    <div><%= createmessage %></div><br>
 
     <form method="post" action="/user/create">
       User Name: <input type="text" name="username" maxlength="20"> <br>
       Password:  <input type="password" name="password" maxlength="50"> <br>
       First Name: <input type="text" name="fname" maxlength="50"> <br>
-      Last Name: <input type="text" name="fname" maxlength="50"> <br>
+      Last Name: <input type="text" name="lname" maxlength="50"> <br>
       <button>Sign Up</button>
     </form>
   </body>
