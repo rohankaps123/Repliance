@@ -131,7 +131,7 @@ router.post('/create', function(req, res){
                   res.redirect('/main');
                 }
               });
-            }       
+            }
           });
         }
       });
