@@ -22,7 +22,7 @@ a {
 }
 
 input[type="text"], input[type="password"]{
-	width: 92%;
+	width: 90%;
 	background: #fff;
 	margin-bottom: 4%
 	border: 1px solid #ccc;
@@ -32,7 +32,7 @@ input[type="text"], input[type="password"]{
 }
 
 button{
-	width: 100%;
+	width: 365px;
 	background: #3399cc;
 	border: 0;
 	padding: 4%;
@@ -63,12 +63,14 @@ button:hover{
 	position: absolute;
 	left: 50px;
 	bottom: 50px;
+	z-index: -1;
 }
 
 .pinkSquid{
 	position: absolute;
 	right: 50px;
 	top: 100px;
+	z-index: -1;
 }
 
 
@@ -82,16 +84,6 @@ button:hover{
    	font-size: 200%;
 }
 
-.logElements{
-	text-align: left;
-	width: 200px;
-}
-
-.logElementsWhite{
-	text-align: left;
-	width: 200px;
-	color: #fff;
-}
 
 .logElementsQuestion{
 	text-align: left;
