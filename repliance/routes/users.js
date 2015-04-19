@@ -29,7 +29,7 @@ router.get('/login', function(req, res){
   }
   else {
     // Render the login view if this is a new login.
-    res.render('login', { title   : 'User Login',
+    res.render('login', { title   : 'Welcome to Repliance',
                           message : authmessage,
                           createmessage : makemessage });
   }

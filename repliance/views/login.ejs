@@ -5,10 +5,14 @@
     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'/>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <div class="logAndAdd">
-  <body>
+  <body class="homeBackground">
+
+    <img src="/images/squid_green.png" class="greenSquid">
+    <img src="/images/squid_pink.png" class="pinkSquid">
+
+    <div class="logAndAdd">
+
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
 
     <div><%= message %></div><br>
 
@@ -18,7 +22,7 @@
       <button>Login</button>
     </form>
 
-    <p>Make an account below!</p>
+    <h3>Make an account below!</h3>
     <div><%= createmessage %></div><br>
 
     <form method="post" action="/user/create" class="logElements">
