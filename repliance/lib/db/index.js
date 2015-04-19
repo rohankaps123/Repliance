@@ -83,12 +83,12 @@ function generateUID(cb){
 			cb(err);
 		}
 		else {
-			var qstring = 'select * from users order by uid desc';
+			var qstring = 'select * from users';
 			client.query(qstring, function(err, result){
 				console.log('got to start of uid gen query');
 				done();
 				client.end();
-				console.log(result.rows[0].uid);
+				//console.log(result.rows[0].uid);
 				if(err){
 					console.log('got to uid gen query err');
 					cb(err);
