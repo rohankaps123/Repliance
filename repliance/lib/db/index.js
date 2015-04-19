@@ -182,6 +182,10 @@ function addQuestion(uid, text, title, cb) {
 	});
 }
 
+function generateQID(cb){
+	
+}
+
 
 module.exports = {
   add     		: add,

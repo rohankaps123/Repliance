@@ -46,3 +46,7 @@ aid int references answers(aid),
 primary key (qid, aid)
 
 );
+
+
+insert into users values(2,'test','99999','test','test',0);
+insert into questions values(1,2,0,10,0,0,NULL,'this is body', 'this is title', 0);
