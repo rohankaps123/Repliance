@@ -9,30 +9,32 @@
 
     <img src="/images/squid_green.png" class="greenSquid">
     <img src="/images/squid_pink.png" class="pinkSquid">
-
     <div class="logAndAdd">
-
     <h1><%= title %></h1>
-
     <div><%= message %></div><br>
+  </div>
 
-    <form method="post" action="/user/auth" class="logElementsWhite">
-      User Name: <input type="text" name="username"> <br> 
-      Password:  <input type="password" name="password"> <br>
-      <button>Login</button>
-    </form>
-
-    <h3>Make an account below!</h3>
-    <div><%= createmessage %></div><br>
-
-    <form method="post" action="/user/create" class="logElementsWhite">
-      User Name: <input type="text" name="username" maxlength="20"> <br>
-      Password:  <input type="password" name="password" maxlength="50"> <br>
-      First Name: <input type="text" name="fname" maxlength="50"> <br>
-      Last Name: <input type="text" name="lname" maxlength="50"> <br>
-      <button>Sign Up</button>
-    </form>
+    <div id="login">
+      <form method="post" action="/user/auth" class="loginForm">
+        <input type="text" name="username" placeholder="Username"/>
+        <input type="password" name="password" placeholder="Password"/>
+        <button>Log In</button>
+      </form>
     </div>
 
+    <div class="logAndAdd">
+    <h3>Make an account below!</h3>
+    <div><%= createmessage %></div><br>
+  </div>
+
+  <div id="login">
+    <form method="post" action="/user/create" class="loginForm">
+      <input type="text" name="username" maxlength="20" placeholder="New Username">
+      <input type="password" name="password" maxlength="50" placeholder="New Password">
+      <input type="text" name="fname" maxlength="50" placeholder="First Name">
+      <input type="text" name="lname" maxlength="50" placeholder="Last Name"> 
+      <button>Sign Up</button>
+    </form>
+  </div>
   </body>
 </html>

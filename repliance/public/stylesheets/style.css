@@ -7,6 +7,46 @@ a {
   color: #00B7FF;
 }
 
+#login{
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 8px;
+	margin-bottom: 2%;
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+}
+
+.loginForm{
+	background: #f0f0f0;
+	padding: 6% 4%;
+}
+
+input[type="text"], input[type="password"]{
+	width: 92%;
+	background: #fff;
+	margin-bottom: 4%
+	border: 1px solid #ccc;
+	padding: 4%;
+	font-size: 95%;
+	color: #555;
+}
+
+button{
+	width: 100%;
+	background: #3399cc;
+	border: 0;
+	padding: 4%;
+	font-size: 100%;
+	color: #fff;
+	cursor: pointer;
+	transition:background .3s;
+	-webkit-transition:background .3s;
+}
+
+button:hover{
+	background: #22288bb;
+}
+
 .homeBackground {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -37,9 +77,9 @@ a {
     position: relative;
     margin-left: auto;
    	margin-right: auto;
-   	width: 225px;
-   	height: 300px;
+   	width:400px;
    	color: #fff;
+   	font-size: 200%;
 }
 
 .logElements{
