@@ -29,6 +29,7 @@ function add(uid, username, password, fname, lname, cb) {
 				client.end();
 				console.log('we got here now4');
 				if (err) {
+					console.log('we got here now 4.5');
 					cb(err);
 				}
 				console.log('we got here now5');
@@ -183,7 +184,7 @@ function addQuestion(uid, text, title, cb) {
 }
 
 function generateQID(cb){
-	
+
 }
 
 
