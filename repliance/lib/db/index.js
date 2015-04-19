@@ -83,7 +83,7 @@ function generateUID(cb){
 			cb(err);
 		}
 		else {
-			var qstring = 'select * from users';
+			var qstring = 'select * from users order by uid desc';
 			client.query(qstring, function(err, result){
 				console.log('got to start of uid gen query');
 				console.log(result);
