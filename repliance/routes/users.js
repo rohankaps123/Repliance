@@ -108,32 +108,32 @@ router.post('/create', function(req, res){
     }
     else{
 
-      dblib.lookup(username, password, function(error, user){
+      dblib.lookup(username, password, function(error, existinguser){
         if(error === undefined){
           req.flash('createauth', 'User already exists');
           res.redirect('/user/login');
         }
         else{
-          /**dblib.generateUID(function(error, uid){
+          dblib.generateUID(function(error, uid){
             if(error){
               req.flash('createauth', error);
               res.redirect('/user/login');
             }
-            else{**/
-              dblib.add(322, username, password, fname, lname, function(error, user) {
+            else{
+              dblib.add(322, username, password, fname, lname, function(error, newuser) {
               if(error) {
                   req.flash('createauth', error);
                   res.redirect('/user/login');
                 }
                 else{
-                  req.session.user = user;
-                  online[user.uid] = user;
+                  req.session.user = newuser;
+                  online[newuser.uid] = newuser;
                   res.redirect('/main');
                 }
               });
-            //}       
-          }//);
-        //}
+            }       
+          });
+        }
       });
     }
   }
