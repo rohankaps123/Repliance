@@ -86,8 +86,13 @@ function generateUID(cb){
 			var qstring = 'select * from users';
 			client.query(qstring, function(err, result){
 				console.log('got to start of uid gen query');
+				console.log(result);
 				done();
 				client.end();
+<<<<<<< HEAD
+=======
+				console.log(result);
+>>>>>>> 2145b606fee9e02d5646a78e733c8cfa67967db8
 				//console.log(result.rows[0].uid);
 				if(err){
 					console.log('got to uid gen query err');
