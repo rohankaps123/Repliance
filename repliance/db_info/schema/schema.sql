@@ -1,7 +1,7 @@
 create table users (
 
 uid int,
-username varchar(20),
+username varchar(20) NOT NULL UNIQUE,
 password varchar(50) NOT NULL,
 fname varchar(50),
 lname varchar(50),

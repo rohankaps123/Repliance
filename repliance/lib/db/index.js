@@ -6,7 +6,7 @@ var cstr = 'postgres://postgres:postgres@localhost/repliance';
  * This function adds a user to the database.
  */
 
-function add(uid, username, password, fname, lname, cb) {
+function addOld(uid, username, password, fname, lname, cb) {
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
 			cb(err);
@@ -232,7 +232,7 @@ function generateQID(cb){
 }
 
 
-function addTwo(username, password, fname, lname, cb) {
+function add(username, password, fname, lname, cb) {
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
 			cb(err);
@@ -268,7 +268,8 @@ function addTwo(username, password, fname, lname, cb) {
 								cb(err);
 							}
 							else{
-								cb(undefined);
+								console.log('we got here now 4.75');
+								cb(undefined, newUID);
 							}
 							console.log('we got here now5');
 						});
@@ -285,7 +286,7 @@ function addTwo(username, password, fname, lname, cb) {
 
 module.exports = {
   add     			: add,
-  addTwo			: addTwo,
+  addOld			: addOld,
   lookup			: lookup,
   accountInfo		: accountInfo,
   list    			: list,

@@ -68,6 +68,17 @@ router.post('/auth', function(req, res) {
   }
 });
 
+router.get('/creationAuth', function(req, res) {
+
+          console.log('no error');
+          var newuser = req.session.user;
+          req.session.user = newuser;
+          console.log(data);
+          online[data] = newuser;
+          console.log('grrrrrrr');
+          res.redirect('/main');
+
+});
 
 // ## logout
 // Deletes user info & session - then redirects to login.
@@ -112,22 +123,33 @@ router.post('/create', function(req, res){
     else{
       console.log("making account");
 
-      dblib.addTwo(username, password, fname, lname, function(error, data){
+      dblib.add(username, password, fname, lname, function(error, data){
         if (error){
           console.log('error');
           res.redirect('/user/login');
         }
         else{
           console.log('no error');
+          //var newuser = req.session.user;
+          //req.session.user = newuser;
+          //console.log(data);
+          //online[data] = newuser;
+          console.log('grrrrrrr');
+          req.flash('createauth', 'Account created! Please log in with your credentials.');
           res.redirect('/user/login');
         }
 
       });
+
     }
     ////////////////////////////
     ////  ACCOUNT CREATION  ////
     ////////////////////////////
   }
 });
+
+
+
+
 
 module.exports = router;
