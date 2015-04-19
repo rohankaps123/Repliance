@@ -153,6 +153,35 @@ function accountInfo(user, cb){
 	});
 }
 
+function addQuestion(uid, text, title, cb) {
+	pg.connect(cstr, function(err, client, done) {
+		if (err) {
+			cb(err);
+		}
+		else {
+			var qstring = 'insert into questions values(' +
+//qid							
+//uid
+//repliesTotal
+//repliesLimit
+//timeTotal
+//timeLimit
+//image
+//bodyText
+//title
+//status
+							+ ')';
+			client.query(qstring, function(err, result) {
+				done();
+				client.end();
+				if (err) {
+					cb(err);
+				}
+			});
+		}
+	});
+}
+
 
 module.exports = {
   add     		: add,
