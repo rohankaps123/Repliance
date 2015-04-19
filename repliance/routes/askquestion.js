@@ -17,4 +17,44 @@ router.get('/', function(req, res) {
 }
 });
 
+router.post('/askquestion', function(req, res) {
+
+	var user = req.session.user;
+  
+	if (user === undefined || online[user.uid] === undefined) {
+    	req.flash('auth', 'Not logged in!');
+    	res.redirect('/user/login');
+	}
+
+	else {
+
+		//Pull values from form
+		var title = req.body.qTitle;
+    	var text = req.body.qText;
+    	var id = user.uid;
+
+    	//dblib.addQuestion(
+
+    	//);
+  
+		res.redirect('/myquestions');
+
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;

@@ -16,7 +16,7 @@
 
     <div><%= message %></div><br>
 
-    <form method="post" action="/user/auth" class="logElements">
+    <form method="post" action="/user/auth" class="logElementsWhite">
       User Name: <input type="text" name="username"> <br> 
       Password:  <input type="password" name="password"> <br>
       <button>Login</button>
@@ -25,13 +25,14 @@
     <h3>Make an account below!</h3>
     <div><%= createmessage %></div><br>
 
-    <form method="post" action="/user/create" class="logElements">
+    <form method="post" action="/user/create" class="logElementsWhite">
       User Name: <input type="text" name="username" maxlength="20"> <br>
       Password:  <input type="password" name="password" maxlength="50"> <br>
       First Name: <input type="text" name="fname" maxlength="50"> <br>
       Last Name: <input type="text" name="lname" maxlength="50"> <br>
       <button>Sign Up</button>
-    </div>
     </form>
+    </div>
+
   </body>
 </html>
