@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
   }
   else {
   res.render('myanswers', { title : 'My Answers'});
-}
+  }
 });
 
 module.exports = router;

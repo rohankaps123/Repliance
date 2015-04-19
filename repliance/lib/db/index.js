@@ -32,6 +32,9 @@ function add(uid, username, password, fname, lname, cb) {
 					console.log('we got here now 4.5');
 					cb(err);
 				}
+				else{
+					cb(undefined);
+				}
 				console.log('we got here now5');
 			});
 		}
@@ -65,7 +68,7 @@ function lookup(username, password, cb) {
 						}
 					}
 					else{
-						console.log('we got here');
+						console.log('lookup we got here');
 						cb('User does not exist');
 					}
 				}
@@ -74,6 +77,44 @@ function lookup(username, password, cb) {
 	});
 }
 
+function verifyUsername(username, cb) {
+	console.log('verifyUsername');
+	pg.connect(cstr, function(err, client, done) {
+		if (err) {
+			cb('error!');
+		}
+		else {
+			var qstring = 'select * from users where username = \'' + username + '\'';
+			client.query(qstring, function(err, result) {
+				console.log('aghghhhhh');
+				console.log('verify query result ' + result);
+				done();
+				client.end();
+				if (err) {
+					console.log('hey');
+					cb('error!');
+				}
+				else{
+					if (result.rows[0] !== undefined){
+						console.log('found user');
+						if(result.rows[0].username === username){
+							console.log('username exists');
+							cb(undefined, result.rows[0].username);
+						}
+						else{
+							console.log('username es not taken');
+							cb('error!');
+						}
+					}
+					else{
+						console.log('lookup we got here');
+						cb('User does not exist');
+					}
+				}
+			});
+		}
+	});
+}
 
 function generateUID(cb){
 	console.log('got to start of uid gen');
@@ -85,11 +126,12 @@ function generateUID(cb){
 		else {
 			var qstring = 'select * from users order by uid desc';
 			client.query(qstring, function(err, result) {
+				console.log('generateUID qstring is ' + qstring);
 				console.log('got to start of uid gen query');
-				console.log(result);
+				console.log('query result is ' + result);
 				done();
 				client.end();
-				console.log(result);
+				console.log('query result is ' + result);
 				//console.log(result.rows[0].uid);
 				if(err){
 					console.log('got to uid gen query err');
@@ -97,7 +139,7 @@ function generateUID(cb){
 				}
 				else{
 					var newUID = result.rows[0].uid + 1;
-					console.log(newUID);
+					console.log('newUID is ' + newUID);
 					cb(undefined, newUID);
 				}
 			});
@@ -190,10 +232,63 @@ function generateQID(cb){
 }
 
 
+function addTwo(username, password, fname, lname, cb) {
+	pg.connect(cstr, function(err, client, done) {
+		if (err) {
+			cb(err);
+		}
+		else {
+
+			generateUID(function(error, newUID) {
+
+				if (error){
+					cb(error);
+				}
+
+				else{
+
+						console.log('we got here now');
+						var qstring = 'insert into users values(' +
+										newUID + ',\'' +
+										username + '\',\'' +
+										password + '\',\'' +
+										fname + '\',\'' +							
+										lname + '\',' +
+										'0)';
+						console.log('we got here now6');
+						console.log(qstring);
+						client.query(qstring, function(err, result) {
+							console.log('we got here now2');
+							done();
+							console.log('we got here now3');
+							client.end();
+							console.log('we got here now4');
+							if (err) {
+								console.log('we got here now 4.5');
+								cb(err);
+							}
+							else{
+								cb(undefined);
+							}
+							console.log('we got here now5');
+						});
+				}
+			});
+		}
+	});
+}
+
+
+
+
+
+
 module.exports = {
-  add     		: add,
-  lookup		: lookup,
-  accountInfo	: accountInfo,
-  list    		: list,
-  generateUID   : generateUID,
+  add     			: add,
+  addTwo			: addTwo,
+  lookup			: lookup,
+  accountInfo		: accountInfo,
+  list    			: list,
+  generateUID   	: generateUID,
+  verifyUsername	: verifyUsername
 };

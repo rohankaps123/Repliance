@@ -106,36 +106,27 @@ router.post('/create', function(req, res){
       req.flash('createauth', 'Fields must contain only letters and numbers');
       res.redirect('/user/login');
     }
+    ////////////////////////////
+    ////  ACCOUNT CREATION  ////
+    ////////////////////////////
     else{
+      console.log("making account");
 
-      dblib.lookup(username, password, function(error, existinguser){
-        if(error === undefined){
-          req.flash('createauth', 'User already exists');
+      dblib.addTwo(username, password, fname, lname, function(error, data){
+        if (error){
+          console.log('error');
           res.redirect('/user/login');
         }
         else{
-          dblib.generateUID(function(error, uid){
-            if(error){
-              req.flash('createauth', error);
-              res.redirect('/user/login');
-            }
-            else{
-              dblib.add(322, username, password, fname, lname, function(error, newuser) {
-              if(error) {
-                  req.flash('createauth', error);
-                  res.redirect('/user/login');
-                }
-                else{
-                  req.session.user = newuser;
-                  online[newuser.uid] = newuser;
-                  res.redirect('/main');
-                }
-              });
-            }
-          });
+          console.log('no error');
+          res.redirect('/user/login');
         }
+
       });
     }
+    ////////////////////////////
+    ////  ACCOUNT CREATION  ////
+    ////////////////////////////
   }
 });
 
