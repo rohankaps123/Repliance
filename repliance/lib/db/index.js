@@ -15,7 +15,7 @@ function add(uid, username, password, fname, lname, cb) {
 			console.log('we got here now');
 			var qstring = 'insert into users values(' +
 							uid + ',\'' +
-							username + ',\''
+							username + ',\'' +
 							password + '\',\'' +
 							fname + '\',\'' +							
 							lname + '\',' +
@@ -49,7 +49,6 @@ function lookup(username, password, cb) {
 		else {
 			var qstring = 'select * from users where username = \'' + username + '\'';
 			client.query(qstring, function(err, result) {
-				console.log(result);
 				done();
 				client.end();
 				if (err) {
@@ -85,7 +84,6 @@ function generateUID(cb){
 		else {
 			var qstring = 'select * from users order by uid desc';
 			client.query(qstring, function(err, result){
-				console.log(result);
 				console.log('got to start of uid gen query');
 				done();
 				client.end();
