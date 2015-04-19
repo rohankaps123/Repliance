@@ -15,6 +15,7 @@ router.get('/', function(req, res) {
   }
   else {
   res.render('myquestions', { title : 'My Questions'});
+
 }
 });
 
