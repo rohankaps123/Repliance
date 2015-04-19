@@ -45,7 +45,17 @@ a {
 .logElements{
 	text-align: left;
 	width: 200px;
+}
+
+.logElementsWhite{
+	text-align: left;
+	width: 200px;
 	color: #fff;
+}
+
+.logElementsQuestion{
+	text-align: left;
+	width: 600px;
 }
 
 .navbar {
@@ -68,4 +78,18 @@ a {
 
 .navElements > li > a {
 	text-decoration: none;
+}
+
+
+
+.qTitle {
+	width: 800px;
+	height: 100px;
+	font-size: 16px;
+}
+
+.qText {
+	width: 800px;
+	height: 375px;
+	font-size: 16px;
 }
