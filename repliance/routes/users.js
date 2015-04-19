@@ -120,11 +120,7 @@ router.post('/create', function(req, res){
               res.redirect('/user/login');
             }
             else{
-<<<<<<< HEAD
               dblib.add(322, username, password, fname, lname, function(error, newuser) {
-=======
-              dblib.add(322, username, password, fname, lname, function(error, user) {
->>>>>>> ef8d4f736c8f7ab01035ae6d5959d7877f0faffb
               if(error) {
                   req.flash('createauth', error);
                   res.redirect('/user/login');
