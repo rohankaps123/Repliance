@@ -114,13 +114,13 @@ router.post('/create', function(req, res){
           res.redirect('/user/login');
         }
         else{
-          dblib.generateUID(function(error, uid){
+          /**dblib.generateUID(function(error, uid){
             if(error){
               req.flash('createauth', error);
               res.redirect('/user/login');
             }
-            else{
-              dblib.add(uid, username, password, fname, lname, function(error, user) {
+            else{**/
+              dblib.add(322, username, password, fname, lname, function(error, user) {
               if(error) {
                   req.flash('createauth', error);
                   res.redirect('/user/login');
@@ -131,9 +131,9 @@ router.post('/create', function(req, res){
                   res.redirect('/main');
                 }
               });
-            }       
-          });
-        }
+            //}       
+          }//);
+        //}
       });
     }
   }

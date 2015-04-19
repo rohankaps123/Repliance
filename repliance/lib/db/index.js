@@ -15,7 +15,7 @@ function add(uid, username, password, fname, lname, cb) {
 			console.log('we got here now');
 			var qstring = 'insert into users values(' +
 							uid + ',\'' +
-							username + ',\'' +
+							username + '\',\'' +
 							password + '\',\'' +
 							fname + '\',\'' +							
 							lname + '\',' +
