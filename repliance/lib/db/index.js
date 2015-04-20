@@ -26,7 +26,7 @@ function lookup(username, password, cb) {
 							cb(undefined, result.rows[0]);
 						}
 						else{
-							cb(err);
+							cb('Invalid username or password');
 						}
 					}
 					else{
