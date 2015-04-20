@@ -18,12 +18,21 @@
       </ul>
     </div>
 
-    <form method="post" action="/askquestion/askquestion" class="logElementsQuestion">
+    <form  id="questionform" method="post" action="/askquestion/askquestion" class="logElementsQuestion">
       Title: <textarea class="qTitle" name="qTitle" maxlength="300"></textarea> <br>
       Text:  <textarea class="qText" name="qText" maxlength="1500"></textarea> <br>
+
+
+
+      Number of Replies: <select name="postlimit" form="questionform">
+        <option value="five">5</option>
+        <option value="ten">10</option>
+        <option value="fifteen">15</option>
+        <option value="twenty">20</option>
+      </select><br>
+      <br>
       <button>Post Question</button>
     </form>
-
 
     <p><a href="/main">Back to Main</a></p>
   </body>
