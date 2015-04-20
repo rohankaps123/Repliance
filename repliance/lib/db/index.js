@@ -91,6 +91,49 @@ function generateUID(cb){
 	});
 }
 
+function generateQID(cb){
+	pg.connect(cstr, function(err, client, done) {
+		if (err) {
+			cb(err);
+		}
+		else {
+			var qstring = 'select * from questions order by qid desc';
+			client.query(qstring, function(err, result) {
+				done();
+				client.end();
+				if(err){
+					cb(err);
+				}
+				else{
+					var newQID = result.rows[0].qid + 1;
+					cb(undefined, newQID);
+				}
+			});
+		}
+	});
+}
+
+function generateAID(cb){
+	pg.connect(cstr, function(err, client, done) {
+		if (err) {
+			cb(err);
+		}
+		else {
+			var qstring = 'select * from answers order by aid desc';
+			client.query(qstring, function(err, result) {
+				done();
+				client.end();
+				if(err){
+					cb(err);
+				}
+				else{
+					var newAID = result.rows[0].aid + 1;
+					cb(undefined, newAID);
+				}
+			});
+		}
+	});
+}
 
 
 /**
