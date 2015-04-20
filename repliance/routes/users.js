@@ -68,18 +68,6 @@ router.post('/auth', function(req, res) {
   }
 });
 
-router.get('/creationAuth', function(req, res) {
-
-          console.log('no error');
-          var newuser = req.session.user;
-          req.session.user = newuser;
-          console.log(data);
-          online[data] = newuser;
-          console.log('grrrrrrr');
-          res.redirect('/main');
-
-});
-
 // ## logout
 // Deletes user info & session - then redirects to login.
 router.get('/logout', function(req, res) {
