@@ -92,17 +92,20 @@ function generateUID(cb){
 }
 
 function generateQID(cb){
+	console.log('in genQID');
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
-			cb(err);
+				console.log('err in genQID');
+			cb('error');
 		}
 		else {
+			console.log('else in genQID');
 			var qstring = 'select * from questions order by qid desc';
 			client.query(qstring, function(err, result) {
 				done();
 				client.end();
 				if(err){
-					cb(err);
+					cb('error');
 				}
 				else{
 					var newQID = result.rows[0].qid + 1;
@@ -184,29 +187,52 @@ function accountInfo(user, cb){
 	});
 }
 
-function addQuestion(uid, text, title, cb) {
+function addQuestion(uid, text, title, limit, cb) {
+	console.log('addQ is called');
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
-			cb(err);
+			console.log('error is here');
+			cb('error!!!');
 		}
 		else {
-			var qstring = 'insert into questions values(' +
-//qid							
-//uid
-//repliesTotal
-//repliesLimit
-//timeTotal
-//timeLimit
-//image
-//bodyText
-//title
-//status
-							+ ')';
-			client.query(qstring, function(err, result) {
-				done();
-				client.end();
-				if (err) {
-					cb(err);
+			console.log('no error yet');
+
+			generateQID(function(error, newQID) {
+
+				console.log('new quid is ' + newQID);
+				if (error){
+					console.log('error');
+					cb('error!');
+				}
+
+				else{
+					console.log('making qstring now');
+					var qstring = 'insert into questions values(' +
+									newQID + ',\'' +	//qid
+									uid + ',\'' +		//uid
+									0  + ',\'' 			//repliesTotal
+									limit + ',\'' +		//repliesLimit
+									0 + ',\'' +			//timeTotal
+									0 + ',\'' +			//timeLimit
+									NULL + ',\'' +		//image
+									text + ',\'' +		//bodyText
+									title + ',\'' +		//title
+									1					//status
+									+ ')';
+					console.log(qstring);
+					client.query(qstring, function(err, result) {
+							console.log('client.query');
+							done();
+							client.end();
+							if (err) {
+								console.log('error happened in cquery');
+								cb('error');
+							}
+							else{
+								console.log('worked in cquery');
+								cb(undefined, newQID);
+							}
+					});
 				}
 			});
 		}
@@ -266,5 +292,6 @@ module.exports = {
   accountInfo		: accountInfo,
   list    			: list,
   generateUID   	: generateUID,
-  verifyUsername	: verifyUsername
+  verifyUsername	: verifyUsername,
+  addQuestion		: addQuestion
 };
