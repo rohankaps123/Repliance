@@ -6,6 +6,10 @@ var dblib = require('../lib/db');
 var users = require('./users');
 var online = users.online;
 
+/**
+*  Post A New Question
+**/
+
 router.get('/', function(req, res) {
   var user = req.session.user;
   if (user === undefined || online[user.uid] === undefined) {
@@ -28,10 +32,14 @@ router.post('/askquestion', function(req, res) {
 
 	else {
 
-		//Pull values from form
-		var title = req.body.qTitle;
+      var id = user.uid;
+
+		  //Pull values from form
+		  var title = req.body.qTitle;
     	var text = req.body.qText;
-    	var id = user.uid;
+      var plimit = req.body.postlimit;
+
+      console.log(title + ' ' + text + ' ' + plimit);
 
     	//dblib.addQuestion(
 

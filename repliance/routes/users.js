@@ -109,20 +109,12 @@ router.post('/create', function(req, res){
     ////  ACCOUNT CREATION  ////
     ////////////////////////////
     else{
-      console.log("making account");
 
       dblib.add(username, password, fname, lname, function(error, data){
         if (error){
-          console.log('error');
           res.redirect('/user/login');
         }
         else{
-          console.log('no error');
-          //var newuser = req.session.user;
-          //req.session.user = newuser;
-          //console.log(data);
-          //online[data] = newuser;
-          console.log('grrrrrrr');
           req.flash('createauth', 'Account created! Please log in with your credentials.');
           res.redirect('/user/login');
         }
