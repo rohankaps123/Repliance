@@ -8,6 +8,14 @@ allowed to modify and update this file with information that will
 comments and guidance on your project.
 ***
 
+# Project 4
+
+**Overall:** I think you all did a good job on the design specification. Each component was fairly detailed. The slides looked pretty good and I like the layout of the website (or at least what's shown in the slides) as well. Your meetings are fine as well. So far, I like the progress that is being made on this project. 
+
+There are a few things I do have a problem with though however. The assignment says "a component-by-component breakdown of each of the important pieces covered in the bird’s eye view and which team members will be responsible for each part," but it looks you missed on saying which team members are responsible for which parts. The second problem, the assignment also mentions that you need to annotate each section with the author and date--both of which were missed.
+
+**Grade:** Thumbs up, but DO add that information in.
+
 # Project 3
 
 **Overall:** I think you all did a pretty good job on this. Everything was presented nicely. Your flowchart looks good, the scenarios were fine, and the screen by screen was good overall as well. Keep up the work and I look forward to seeing what you all can do.
