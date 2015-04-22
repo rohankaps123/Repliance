@@ -92,14 +92,11 @@ function generateUID(cb){
 }
 
 function generateQID(cb){
-	console.log('in genQID');
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
-				console.log('err in genQID');
 			cb('error');
 		}
 		else {
-			console.log('else in genQID');
 			var qstring = 'select * from questions order by qid desc';
 			client.query(qstring, function(err, result) {
 				done();
@@ -163,7 +160,7 @@ function list(cb) {
 }
 
 /**
-* 
+*
  */
 function accountInfo(user, cb){
 
@@ -188,48 +185,37 @@ function accountInfo(user, cb){
 }
 
 function addQuestion(uid, text, title, limit, cb) {
-	console.log('addQ is called');
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
-			console.log('error is here');
 			cb('error!!!');
 		}
 		else {
-			console.log('no error yet');
-
 			generateQID(function(error, newQID) {
-
-				console.log('new quid is ' + newQID);
 				if (error){
-					console.log('error');
 					cb('error!');
 				}
 
 				else{
-					console.log('making qstring now');
 					var qstring = 'insert into questions values(' +
-									newQID + ',\'' +	//qid
-									uid + ',\'' +		//uid
-									0  + ',\'' 			//repliesTotal
-									limit + ',\'' +		//repliesLimit
-									0 + ',\'' +			//timeTotal
-									0 + ',\'' +			//timeLimit
-									NULL + ',\'' +		//image
-									text + ',\'' +		//bodyText
-									title + ',\'' +		//title
+									newQID + ',' +	//qid
+									uid + ',' +		//uid
+									0  + ',' +			//repliesTotal
+									limit + ',' +		//repliesLimit
+									0 + ',' +			//timeTotal
+									0 + ',' +			//timeLimit
+									null + ',\'' +		//image
+									text + '\',\'' +		//bodyText
+									title + '\',' +		//title
 									1					//status
 									+ ')';
 					console.log(qstring);
 					client.query(qstring, function(err, result) {
-							console.log('client.query');
 							done();
 							client.end();
 							if (err) {
-								console.log('error happened in cquery');
 								cb('error');
 							}
 							else{
-								console.log('worked in cquery');
 								cb(undefined, newQID);
 							}
 					});
@@ -239,9 +225,7 @@ function addQuestion(uid, text, title, limit, cb) {
 	});
 }
 
-function generateQID(cb){
 
-}
 
 
 function add(username, password, fname, lname, cb) {
@@ -262,7 +246,7 @@ function add(username, password, fname, lname, cb) {
 										newUID + ',\'' +
 										username + '\',\'' +
 										password + '\',\'' +
-										fname + '\',\'' +							
+										fname + '\',\'' +
 										lname + '\',' +
 										'0)';
 						client.query(qstring, function(err, result) {
