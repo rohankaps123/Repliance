@@ -49,7 +49,7 @@ button:hover{
 
 .homeBackground {
   padding: 50px;
-  background: url(../images/background_blue.png) no-repeat center center fixed; 
+  background: url(../images/background_blue.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -72,6 +72,23 @@ button:hover{
 	z-index: -1;
 }
 
+.pinkSquidsmall{
+	position: absolute;
+	right: 250px;
+	top: 50px;
+  max-width: 20%;
+  max-height: 20%;
+	z-index: -1;
+}
+
+.greenSquidsmall{
+	position: absolute;
+	left: 50px;
+	bottom: 50px;
+  max-width: 20%;
+  max-height: 20%;
+	z-index: -1;
+}
 
 .logAndAdd {
 	text-align: center;
