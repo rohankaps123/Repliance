@@ -2,6 +2,8 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'/>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body class="homeBackground">
@@ -18,11 +20,12 @@
     <div class="navbar">
       <ul class="navElements">
         <a href="/main"><img src="/images/squid_home.png"></a>
-        <li><a href="/user/logout">Logout</a></li>
-        <li><a href="/account">Account</a><li>
-        <li><a href="/myquestions">My Questions</a><li>
-        <li><a href="/myanswers">My Answers</a><li>
-        <li><a href="/askquestion">Ask Question</a><li>
+        <p>Welcome <%= username %>!</p>
+        <li><a href="/user/logout" class=­"btn btn-pr­imary btn-lg active­" role="b­utt­on">Logout</a></li>
+        <li><a href="/account" class=­"btn btn-pr­imary btn-lg active­" role="b­utt­on">Account</a></li>
+        <li><a href="/myquestions" class=­"btn btn-pr­imary btn-lg active­" role="b­utt­on">My Questions</a></li>
+        <li><a href="/myanswers" class=­"btn btn-pr­imary btn-lg active­" role="b­utt­on">My Answers</a></li>
+        <li><a href="/askquestion" class=­"btn btn-pr­imary btn-lg active­" role="b­utt­on">Ask Question</a></li>
       </ul>
     </div>
 

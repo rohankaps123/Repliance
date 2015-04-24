@@ -101,7 +101,6 @@ button:hover{
    	font-size: 200%;
 }
 
-
 .logElementsQuestion{
 	text-align: left;
 	width: 600px;
@@ -110,7 +109,7 @@ button:hover{
 .navbar {
 	width: 200px;
 	height: 100%;
-	background-color: #E5E4E2;
+	background-color: #fff;
 	top: 0px;
 	right: 0px;
 	position: absolute;
@@ -119,26 +118,39 @@ button:hover{
 .navElements{
 	list-style-type: none;
 	font-size: 20px;
-	font-family: 'Arial';
+	font-family: 'Ubuntu', sans-serif;
 	text-decoration: none;
 	display: block;
 }
 
+.navElements > img {
+	position: absolute;
+	top: 0px;
+	left: 10px;
+}
 
 .navElements > li > a {
 	text-decoration: none;
 }
 
-
+.backLink{
+	list-style-type: none;
+	color: #fff;
+	font-size: 20px;
+	font-family: 'Ubuntu', sans-serif;
+	display: block;
+}
 
 .qTitle {
 	width: 800px;
 	height: 100px;
 	font-size: 16px;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .qText {
 	width: 800px;
 	height: 375px;
 	font-size: 16px;
+	font-family: 'Ubuntu', sans-serif;
 }

@@ -12,19 +12,20 @@ var online = users.online;
 
 router.get('/', function(req, res) {
   var user = req.session.user;
+  var username = user.username;
   if (user === undefined || online[user.uid] === undefined) {
     req.flash('auth', 'Not logged in!');
     res.redirect('/user/login');
   }
   else {
-  res.render('askquestion', { title : 'Ask Question'});
+  res.render('askquestion', { title : 'Ask Question', username: username});
 }
 });
 
 router.post('/askquestion', function(req, res) {
 
 	var user = req.session.user;
-  
+
 	if (user === undefined || online[user.uid] === undefined) {
     	req.flash('auth', 'Not logged in!');
     	res.redirect('/user/login');
@@ -53,16 +54,11 @@ router.post('/askquestion', function(req, res) {
         limitValue = 20;
       }
 
-      console.log(title + ' ' + text + ' ' + plimit);
-
     	dblib.addQuestion(id, text, title, limitValue, function(error, data){
-        console.log('here we are');
         if (error){
-          console.log('error occurred');
           res.redirect('/askquestion');
         }
         else{
-          console.log('seems to have worked');
           res.redirect('/myquestions');
 
         }
