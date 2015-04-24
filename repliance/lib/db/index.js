@@ -263,10 +263,35 @@ function add(username, password, fname, lname, cb) {
 			});
 		}
 	});
+
+	
 }
 
 
-
+function userQuest(user, cb){
+	pg.connect(cstr, function(err, client, done){
+		if(err){
+			cb(err);
+		}
+		else{
+			var uid = user.uid;
+			var qstring = 'select * from questions where uid =' + uid +' order by qid desc';
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				console.log(result);
+				if(err){
+					console.log('error');
+					dc(err);
+				}
+				else{
+					console.log('result');
+					cb(undefined, result);
+				}
+			});
+		}
+	});
+}
 
 
 
@@ -277,5 +302,6 @@ module.exports = {
   list    			: list,
   generateUID   	: generateUID,
   verifyUsername	: verifyUsername,
-  addQuestion		: addQuestion
+  addQuestion		: addQuestion,
+  userQuest			: userQuest
 };
