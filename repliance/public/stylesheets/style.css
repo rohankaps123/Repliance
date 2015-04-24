@@ -123,6 +123,11 @@ button:hover{
 	display: block;
 }
 
+.navElements > img {
+	position: absolute;
+	top: 0px;
+	left: 10px;
+}
 
 .navElements > li > a {
 	text-decoration: none;
