@@ -186,7 +186,15 @@ button:hover{
 	font-family: 'Ubuntu', sans-serif;
 }
 
+.qList{
+
+	list-style-type: none;
+	padding-left: 40px;
+	line-height: 10px;
+}
+
 .questionList{
+	margin: 10px 0;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 17px;
 	border-radius: 10px;
