@@ -24,7 +24,23 @@
       </ul>
     </div>
 
-    <div class = "myQuestionList"><%= myquestions %></div> 
+    <div class = myQuestionLit>
+      <ul class = "questionList">
+<%
+for(var i = 0; i < data.rows.length; i++){
+%>      
+  <li class = "questionElement"> <div class = "questionBox"> 
+    <p class = "questTitle"> <% data.rows[i].title %> </p>
+    <p class = "questBody"> <%  data.rows[i].bodytext %> </p>
+    <p class = "questRepLeft"> <% data.rows[i].repliestotal %> </p>
+    <p class = "questRepLim"> <% data.rows[i].replieslimit %> </p>
+  </div></li>
+<%
+}
+%>
+      </ul>
+    </div>
+    
 
   </body>
 </html>
