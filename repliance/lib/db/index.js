@@ -318,7 +318,7 @@ function userQuest(user, cb){
 				console.log(result);
 				if(err){
 					console.log('error');
-					dc(err);
+					cb(err);
 				}
 				else{
 					console.log('result');
@@ -340,14 +340,14 @@ function userAns(user, cb){
 		}
 		else{
 			var uid = user.uid;
-			var qstring = 'select * from answers where uid =' + uid +' order by qid desc';
+			var qstring = 'select * from answers where uid =' + uid +' order by aid desc';
 			client.query(qstring, function(err, result){
 				done();
 				client.end();
 				console.log(result);
 				if(err){
 					console.log('error');
-					dc(err);
+					cb(err);
 				}
 				else{
 					console.log('result');
