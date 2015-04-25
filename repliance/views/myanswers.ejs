@@ -10,6 +10,8 @@
     <img src="/images/squid_pink.png" class="pinkSquidsmall">
     <h1><%= title %></h1>
 
+    <p><a href="/main" class = "backLink">Back to Main</a></p>
+
     <div class="navbar">
       <a href="/main"><img src="/images/squid_home.png" class="navImg"></a> 
       <ul class="navElements">        
@@ -22,6 +24,21 @@
       </ul>
     </div>
 
-    <p><a href="/main" class = "backLink">Back to Main</a></p>
+    <div class = myQuestionLit>
+      <ul class = "questionList">
+<%
+for(var i = 0; i < data.rows.length; i++){
+%>      
+  <li class = "answerElement">
+    <div class = "answerBox"> 
+      <p class = "reply"> <%= data.rows[i].reply %> </p>
+      <p class = "score"> <%=  data.rows[i].score %> </p>
+    </div>
+  </li>
+<%
+}
+%>
+      </ul>
+    </div>
   </body>
 </html>

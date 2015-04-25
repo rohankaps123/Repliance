@@ -8,7 +8,7 @@
   <body class="homeBackground">
     <img src="/images/squid_green.png" class="greenSquidsmall">
     <img src="/images/squid_pink.png" class="pinkSquidsmall">
-    <h1><%= title %></h1>
+    <h1 class= "title"><%= title %></h1>
 
     <div class="navbar">
       <a href="/main"><img src="/images/squid_home.png" class="navImg"></a> 
@@ -23,8 +23,8 @@
     </div>
 
     <form  id="questionform" method="post" action="/askquestion/askquestion" class="logElementsQuestion">
-      Title: <textarea class="qTitle" name="qTitle" maxlength="300"></textarea> <br>
-      Text:  <textarea class="qText" name="qText" maxlength="1500"></textarea> <br>
+      Title: <textarea class="qTitle" name="qTitle" maxlength="300" placeholder="Enter a Title of Your Question"></textarea> <br>
+      Text:  <textarea class="qText" name="qText" maxlength="1500" placeholder= "Add Some Details to Your Question"></textarea> <br>
 
 
 
@@ -36,7 +36,7 @@
         <option value="twenty">20</option>
       </select><br>
       <br>
-      <button>Post Question</button>
+      <input type="submit" class="otherButton" value="Post Question">
     </form>
 
     <p><a href="/main" class = "backLink">Back to Main</a></p>
