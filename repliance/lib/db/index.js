@@ -8,13 +8,14 @@ var cstr = 'postgres://postgres:postgres@localhost/repliance';
  */
 
 function lookup(username, password, cb) {
-	pg.connect(cstr, function(err, client, done) {
+    pg.connect(cstr, function(err, client, done) {
 		if (err) {
+			console.log(err);
 			cb(err);
-		}
-		else {
-			var qstring = 'select * from users where username = \'' + username + '\'';
-			client.query(qstring, function(err, result) {
+		} else {
+		    //using bind variables to prevent sql injection
+			var qstring = 'select * from users where username = ($1)';
+		    client.query(qstring, [username], function(err, result) {
 				done();
 				client.end();
 				if (err) {
@@ -34,6 +35,7 @@ function lookup(username, password, cb) {
 					}
 				}
 			});
+
 		}
 	});
 }
@@ -48,8 +50,8 @@ function verifyUsername(username, cb) {
 			cb('error!');
 		}
 		else {
-			var qstring = 'select * from users where username = \'' + username + '\'';
-			client.query(qstring, function(err, result) {
+			var qstring = 'select * from users where username = ($1)';
+			client.query(qstring, [username], function(err, result) {
 				done();
 				client.end();
 				if (err) {
@@ -188,7 +190,7 @@ function accountInfo(user, cb){
 			cb(err);
 		}
 		else{
-			client.query(('select * from users where username=' + '\'' + user.username + '\''), function(err, result){
+			client.query(('select * from users where username=($1)'), [user.username], function(err, result){
 				done();
 				client.end();
 				if (err){
@@ -218,37 +220,14 @@ function addQuestion(uid, text, title, limit, cb) {
 					cb('error!');
 				}
 
-				else{/*
-					var query = client.query('insert into questions values(($1),($2),($3),($4),($5),($6),($7),($8),($9),($10));',
-					[newQID, uid, 0, limit, 0, 0, null, text, title, 1]);
-					
-					query.on('end', function () {
-						client.end();
-						return cb(null);
-						});
-					
-					*/
-					var qstring = 'insert into questions values(' +
-									newQID + ',' +	//qid
-									uid + ',' +		//uid
-									0  + ',' +			//repliesTotal
-									limit + ',' +		//repliesLimit
-									0 + ',' +			//timeTotal
-									0 + ',' +			//timeLimit
-									null + ',\'' +		//image
-									text + '\',\'' +		//bodyText
-									title + '\',' +		//title
-									1					//status
-									+ ')';
-					
-					console.log(qstring);
-					client.query(qstring, function(err, result) {
+				else{
+					var qstring = 'insert into questions values(($1),($2),($3),($4),($5),($6),($7),($8),($9),($10));';
+					client.query(qstring, [newQID, uid, 0, limit, 0, 0, null, text, title, 1], function(err, result) {
 							done();
 							client.end();
 							if (err) {
 								cb('error');
-							}
-							else{
+							} else{
 								cb(undefined, newQID);
 							}
 					});
@@ -267,30 +246,28 @@ function add(username, password, fname, lname, cb) {
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
 			cb(err);
-		}
-		else {
+		} else {
 
 			generateUID(function(error, newUID) {
 
 				if (error){
 					cb(error);
-				}
-
-				else{
-						var qstring = 'insert into users values(' +
+				} else{
+				    var qstring = 'insert into users values(($1),($2),($3),($4),($5),($6));';
+					client.query(qstring, [newUID, username, password, fname, lname, 0], function(err, result) {
+						/*var qstring = 'insert into users values(' +
 										newUID + ',\'' +
 										username + '\',\'' +
 										password + '\',\'' +
 										fname + '\',\'' +
 										lname + '\',' +
-										'0)';
-						client.query(qstring, function(err, result) {
+										'0)';	*/
+						//client.query(qstring, function(err, result) {
 							done();
 							client.end();
 							if (err) {
 								cb(err);
-							}
-							else{
+							} else{
 								cb(undefined, newUID);
 							}
 						});
@@ -311,8 +288,9 @@ function userQuest(user, cb){
 		}
 		else{
 			var uid = user.uid;
-			var qstring = 'select * from questions where uid =' + uid +' order by qid desc';
-			client.query(qstring, function(err, result){
+			//var qstring = 'select * from questions where uid =' + uid +' order by qid desc';
+			var qstring = 'select * from questions where uid = ($1) order by qid desc';
+			client.query(qstring, [uid], function(err, result){
 				done();
 				client.end();
 				console.log(result);
@@ -340,8 +318,9 @@ function userAns(user, cb){
 		}
 		else{
 			var uid = user.uid;
-			var qstring = 'select * from answers where uid =' + uid +' order by aid desc';
-			client.query(qstring, function(err, result){
+			//var qstring = 'select * from answers where uid =' + uid +' order by qid desc';
+			var qstring = 'select * from answers where uid = ($1) order by aid desc';
+			client.query(qstring, [uid], function(err, result){
 				done();
 				client.end();
 				console.log(result);
