@@ -38,6 +38,10 @@ function lookup(username, password, cb) {
 	});
 }
 
+/**
+ * This function looks up a particular user in the databse (account creation)
+ */
+
 function verifyUsername(username, cb) {
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
@@ -69,6 +73,10 @@ function verifyUsername(username, cb) {
 	});
 }
 
+/**
+ * This function generates a unique user id number for a new user
+ */
+
 function generateUID(cb){
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
@@ -91,6 +99,10 @@ function generateUID(cb){
 	});
 }
 
+/**
+ * This function generates a unique id number for a new question
+ */
+
 function generateQID(cb){
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
@@ -112,6 +124,10 @@ function generateQID(cb){
 		}
 	});
 }
+
+/**
+ * This function generates a unique id number for a new answer
+ */
 
 function generateAID(cb){
 	pg.connect(cstr, function(err, client, done) {
@@ -139,6 +155,7 @@ function generateAID(cb){
 /**
  * This function returns a list of all users in the database.
  */
+
 function list(cb) {
 	pg.connect(cstr, function(err, client, done) {
 		if (err) {
@@ -160,8 +177,9 @@ function list(cb) {
 }
 
 /**
-*
+ * This function returns the account information about a particular user
  */
+
 function accountInfo(user, cb){
 
 	pg.connect(cstr, function(err, client, done){
@@ -183,6 +201,11 @@ function accountInfo(user, cb){
 		}
 	});
 }
+
+
+/**
+ * This function adds a new question to the questions table
+ */
 
 function addQuestion(uid, text, title, limit, cb) {
 	pg.connect(cstr, function(err, client, done) {
@@ -225,8 +248,9 @@ function addQuestion(uid, text, title, limit, cb) {
 	});
 }
 
-
-
+/**
+ * This function adds a new user to the database (Sing Up)
+ */
 
 function add(username, password, fname, lname, cb) {
 	pg.connect(cstr, function(err, client, done) {
@@ -263,10 +287,11 @@ function add(username, password, fname, lname, cb) {
 			});
 		}
 	});
-
-	
 }
 
+/**
+ * This function returns a list of all the questions a user has asked (My Questions)
+ */
 
 function userQuest(user, cb){
 	pg.connect(cstr, function(err, client, done){
@@ -293,7 +318,38 @@ function userQuest(user, cb){
 	});
 }
 
+/**
+ * This function returns a list of all the answers a user has written (My Answers)
+ */
 
+function userAns(user, cb){
+	pg.connect(cstr, function(err, client, done){
+		if(err){
+			cb(err);
+		}
+		else{
+			var uid = user.uid;
+			var qstring = 'select * from answers where uid =' + uid +' order by qid desc';
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				console.log(result);
+				if(err){
+					console.log('error');
+					dc(err);
+				}
+				else{
+					console.log('result');
+					cb(undefined, result);
+				}
+			});
+		}
+	});
+}
+
+/**
+ * Export the functions used in other parts of the app
+ */
 
 module.exports = {
   add     			: add,
@@ -303,5 +359,6 @@ module.exports = {
   generateUID   	: generateUID,
   verifyUsername	: verifyUsername,
   addQuestion		: addQuestion,
-  userQuest			: userQuest
+  userQuest			: userQuest,
+  userAns			: userAns
 };
