@@ -220,7 +220,6 @@ function addQuestion(uid, text, title, limit, cb) {
 					cb('error!');
 				}
 
-<<<<<<< HEAD
 				else{/*
 					var query = client.query('insert into questions values(($1),($2),($3),($4),($5),($6),($7),($8),($9),($10));',
 					[newQID, uid, 0, limit, 0, 0, null, text, title, 1]);
@@ -246,11 +245,6 @@ function addQuestion(uid, text, title, limit, cb) {
 					
 					console.log(qstring);
 					client.query(qstring, function(err, result) {
-=======
-				else{
-					var qstring = 'insert into questions values(($1),($2),($3),($4),($5),($6),($7),($8),($9),($10));';
-					client.query(qstring, [newQID, uid, 0, limit, 0, 0, null, text, title, 1], function(err, result) {
->>>>>>> db9417b074ba80cfaa44b13797479220fbbbea25
 							done();
 							client.end();
 							if (err) {
