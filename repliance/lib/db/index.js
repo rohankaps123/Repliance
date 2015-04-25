@@ -359,7 +359,7 @@ function userAns(user, cb){
 }
 
 /**
- * Export the functions used in other parts of the app
+ * Export the functions
  */
 
 module.exports = {
