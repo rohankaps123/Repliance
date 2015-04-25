@@ -6,8 +6,8 @@ password varchar(50) NOT NULL,
 fname varchar(50),
 lname varchar(50),
 score int,
-primary key (uid)
-
+primary key (uid),
+unique key uk_username(username)
 );
 
 create table answers(

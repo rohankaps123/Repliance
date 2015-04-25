@@ -140,6 +140,9 @@ button:hover{
 	padding-bottom: 5000px;
 	margin-bottom: -5000px;
 	overflow: hidden;
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
 }
 
 .navElements{
