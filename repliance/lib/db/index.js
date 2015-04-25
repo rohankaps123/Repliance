@@ -1,6 +1,6 @@
 var pg = require('pg');
 
-var cstr = 'postgres://postgres:postgres@localhost/repliance';
+var cstr = 'postgres://kalina:kalina@localhost/repliance';
 
 
 /**
@@ -219,6 +219,15 @@ function addQuestion(uid, text, title, limit, cb) {
 				}
 
 				else{
+					var query = client.query('insert into questions values(($1),($2),($3),($4),($5),($6),($7),($8),($9),($10));',
+					[newQID, uid, 0, limit, 0, 0, null, text, title, 1]);
+					
+					query.on('end', function () {
+						client.end();
+						return cb(null);
+						});
+					
+					/*
 					var qstring = 'insert into questions values(' +
 									newQID + ',' +	//qid
 									uid + ',' +		//uid
@@ -231,6 +240,7 @@ function addQuestion(uid, text, title, limit, cb) {
 									title + '\',' +		//title
 									1					//status
 									+ ')';
+					
 					console.log(qstring);
 					client.query(qstring, function(err, result) {
 							done();
@@ -242,6 +252,8 @@ function addQuestion(uid, text, title, limit, cb) {
 								cb(undefined, newQID);
 							}
 					});
+					*/
+				
 				}
 			});
 		}

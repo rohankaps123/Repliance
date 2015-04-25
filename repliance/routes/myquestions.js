@@ -20,7 +20,8 @@ router.get('/', function(req, res) {
 	    		res.redirect('/user/login');
 	  		}
 	  		else{
-	  			var htmlString = '<ul class = "questionList"> ';
+	  			/*
+				var htmlString = '<ul class = "questionList"> ';
 	  			console.log(data);
 	  			console.log(data.rows.length);
 	  			for(var i = 0; i < data.rows.length; i++){
@@ -40,8 +41,14 @@ router.get('/', function(req, res) {
 	  											'</div></li>';
 	  			}
 	  			htmlString = htmlString + '</ul>';
+	  			*/
+				
+				
 	  			res.render('myquestions', {title : 'My Questions',
-	  									   myquestions : htmlString});
+										  username : user.username,
+										  data : data
+	  									   //myquestions : htmlString
+										   });
 	  		}
 	  	});
 	  	//res.render('myquestions', { title : 'My Questions'});
