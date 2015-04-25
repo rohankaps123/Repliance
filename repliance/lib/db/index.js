@@ -238,7 +238,7 @@ function addQuestion(uid, text, title, limit, cb) {
 									null + ',\'' +		//image
 									text + '\',\'' +		//bodyText
 									title + '\',' +		//title
-									1					//status
+									0					//status
 									+ ')';
 					
 					console.log(qstring);
@@ -358,6 +358,35 @@ function userAns(user, cb){
 	});
 }
 
+function openQuestions(user, cb){
+	pg.connect(cstr, function(err, client, done){
+		if(err){
+			cb(err);
+		}
+		else{
+			var uid = user.uid;
+			var qstring = 'select * from questions where uid <>' + uid +' and status = 0 order by qid desc';
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				console.log(result);
+				if(err){
+					console.log('error');
+					cb(err);
+				}
+				else{
+					console.log('result');
+					cb(undefined, result);
+				}
+			});
+		}
+	});
+}
+
+
+
+
+
 /**
  * Export the functions
  */
@@ -371,5 +400,6 @@ module.exports = {
   verifyUsername	: verifyUsername,
   addQuestion		: addQuestion,
   userQuest			: userQuest,
-  userAns			: userAns
+  userAns			: userAns,
+  openQuestions		: openQuestions
 };
