@@ -135,7 +135,7 @@ function generateAID(cb){
 		if (err) {
 			cb(err);
 		} else {
-		    var qsrtring = 'select nextval(\'seq_answers\') as aid';
+		    var qstring = 'select nextval(\'seq_answers\') as aid';
 			//var qstring = 'select * from answers order by aid desc';
 			client.query(qstring, function(err, result) {
 				done();
@@ -228,6 +228,49 @@ function addQuestion(uid, text, title, limit, cb) {
 		}
 	});
 }
+
+
+
+/**
+ * This function adds a new answer to the answers table
+ */
+
+function addAnswer(qid, uid, text, cb) {
+	pg.connect(cstr, function(err, client, done) {
+		if (err) {
+			cb(err);
+		} else {
+			generateAID(function(error, newAID) {
+				if (error){
+					cb(error);
+				} else {
+				    var qstring = 'insert into answers values(($1),($2),($3),($4));';
+					client.query(qstring,  [newAID, uid, 0, text], function(err, result) {
+							done();
+							//client.end();
+							if (err) {
+								cb(err);
+							} else {
+								var qstring2 = 'insert into qa values(($1),($2));';
+								    client.query(qstring2, [qid, newAID], function(err, result) {
+								    done();
+								    client.end();
+							        if (err) {
+										cb(err);
+									} else {
+										cb(undefined, newAID);
+									}
+								});
+							}
+					});
+				
+				}
+			});
+		}
+	});
+}
+
+
 
 /**
  * This function adds a new user to the database (Sing Up)
@@ -386,5 +429,6 @@ module.exports = {
   userQuest			: userQuest,
   userAns			: userAns,
   openQuestions		: openQuestions,
-  getQuestion       : getQuestion
+  getQuestion       : getQuestion,
+  addAnswer         : addAnswer
 };
