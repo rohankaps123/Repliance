@@ -23,6 +23,7 @@ router.get('/', function(req, res) {
         else{
           res.render('main', {title : 'Repliance',
                       username : user.username,
+                      message : '',
                       data : data });
         }
       });
