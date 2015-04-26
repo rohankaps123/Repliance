@@ -9,18 +9,24 @@ var online = users.online;
 // ## main
 // The main user view.
 router.get('/', function(req, res) {
-  // added session support
   var user = req.session.user;
-  if (user === undefined || online[user.uid] === undefined) {
-    req.flash('auth', 'Not logged in!');
-    res.redirect('/user/login');
-  }
-  else {
-    res.render('main', { title   : 'User Main',
-                         message : 'Login Successful',
-                         username : user.username,
-                         password : user.password });
-  }
-});
+    if (user === undefined || online[user.uid] === undefined) {
+      req.flash('auth', 'Not logged in!');
+      res.redirect('/user/login');
+    }
+    else {
+      dblib.openQuestions(user, function(error, data){
+        if(user === undefined || online[user.uid] === undefined){
+          req.flash('auth', 'Not logged in!');
+          res.redirect('/user/login');
+        }
+        else{
+          res.render('main', {title : 'Repliance',
+                      username : user.username,
+                      data : data });
+        }
+      });
+    }
+  });
 
 module.exports = router;

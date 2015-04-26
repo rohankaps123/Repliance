@@ -220,9 +220,31 @@ function addQuestion(uid, text, title, limit, cb) {
 					cb('error!');
 				}
 
-				else{
-					var qstring = 'insert into questions values(($1),($2),($3),($4),($5),($6),($7),($8),($9),($10));';
-					client.query(qstring, [newQID, uid, 0, limit, 0, 0, null, text, title, 1], function(err, result) {
+				else{/*
+					var query = client.query('insert into questions values(($1),($2),($3),($4),($5),($6),($7),($8),($9),($10));',
+					[newQID, uid, 0, limit, 0, 0, null, text, title, 1]);
+					
+					query.on('end', function () {
+						client.end();
+						return cb(null);
+						});
+					
+					*/
+					var qstring = 'insert into questions values(' +
+									newQID + ',' +	//qid
+									uid + ',' +		//uid
+									0  + ',' +			//repliesTotal
+									limit + ',' +		//repliesLimit
+									0 + ',' +			//timeTotal
+									0 + ',' +			//timeLimit
+									null + ',\'' +		//image
+									text + '\',\'' +		//bodyText
+									title + '\',' +		//title
+									0					//status
+									+ ')';
+					
+					console.log(qstring);
+					client.query(qstring, function(err, result) {
 							done();
 							client.end();
 							if (err) {
@@ -337,6 +359,35 @@ function userAns(user, cb){
 	});
 }
 
+function openQuestions(user, cb){
+	pg.connect(cstr, function(err, client, done){
+		if(err){
+			cb(err);
+		}
+		else{
+			var uid = user.uid;
+			var qstring = 'select * from questions where uid <>' + uid +' and status = 0 order by qid desc';
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				console.log(result);
+				if(err){
+					console.log('error');
+					cb(err);
+				}
+				else{
+					console.log('result');
+					cb(undefined, result);
+				}
+			});
+		}
+	});
+}
+
+
+
+
+
 /**
  * Export the functions
  */
@@ -350,5 +401,6 @@ module.exports = {
   verifyUsername	: verifyUsername,
   addQuestion		: addQuestion,
   userQuest			: userQuest,
-  userAns			: userAns
+  userAns			: userAns,
+  openQuestions		: openQuestions
 };
