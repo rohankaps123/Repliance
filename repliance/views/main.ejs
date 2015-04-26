@@ -13,17 +13,6 @@
 
     <div><%= message %></div><br>
 
-    <div>
-        <table border="1" cellpadding="3" cellspacing="0" width="70%">
-          <tr>
-            <td width="10%" align="center" bgcolor="lightgray"> user </td>
-            <td width="80%" align="center" bgcolor="lightgray"> question </td>
-            <td width="10%" align="center" bgcolor="lightgray"> reply </td>
-          </tr>
-
-      </table>
-    </div>
-
 
     <div class="navbar">
       <a href="/main"><img src="/images/squid_home.png" class="navImg"></a>
@@ -37,17 +26,17 @@
       </ul>
     </div>
 
-<div class = "main">
-      <ul class = "questions">
-<%
-for(var i = 0; i < data.rows.length; i++){
-%>      
-  <li class = "questionElement"> <div class = "questionBox"> 
-    <p class = "questTitle"> <%= data.rows[i].title %> </p>
-    <p class = "questBody"> <%=  data.rows[i].bodytext %> </p>
-    <p class = "questRepLeft"> <%= data.rows[i].repliestotal %> </p>
-    <p class = "questRepLim"> <%= data.rows[i].replieslimit %> </p>
-  </div></li>
+  <div class = "main">
+      <ul class = "qList">
+        <%
+        for(var i = 0; i < data.rows.length; i++){
+        %>
+        <li class= "questionList">
+          <p><strong>Question: </strong><%= data.rows[i].title %> </p>
+          <p><strong>Question Details: </strong><%=  data.rows[i].bodytext %> </p>
+          <p><strong># of Replies: </strong><%= data.rows[i].repliestotal %> </p>
+          <p><strong>Max Replies: </strong><%= data.rows[i].replieslimit %> </p>
+        </li>
 <%
 }
 %>
