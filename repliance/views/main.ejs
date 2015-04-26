@@ -9,7 +9,7 @@
   <body class="homeBackground">
     <img src="/images/squid_green.png" class="greenSquidsmall">
     <img src="/images/squid_pink.png" class="pinkSquidsmall">
-    <h1>Welcome <%= username %> to Repliance</h1>
+    <h1>Welcome <%= fname %> to Repliance</h1>
 
     <div><%= message %></div><br>
 
@@ -36,6 +36,8 @@
           <p><strong>Question Details: </strong><%=  data.rows[i].bodytext %> </p>
           <p><strong># of Replies: </strong><%= data.rows[i].repliestotal %> </p>
           <p><strong>Max Replies: </strong><%= data.rows[i].replieslimit %> </p>
+          <a href="/reply?qid=<%=data.rows[i].qid%>" class="btn btn-default" role="b­utt­on">Reply</a>
+          
         </li>
 <%
 }

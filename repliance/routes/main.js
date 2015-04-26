@@ -24,6 +24,8 @@ router.get('/', function(req, res) {
         else{
           res.render('main', {title : 'Repliance',
                       username : user.username,
+                      fname : user.fname,
+                      lname : user.lname,
                       message : message,
                       data : data });
         }

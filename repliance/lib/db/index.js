@@ -317,6 +317,8 @@ function userAns(user, cb){
 	});
 }
 
+/*
+ */
 function openQuestions(user, cb){
 	pg.connect(cstr, function(err, client, done){
 		if(err){
@@ -325,6 +327,31 @@ function openQuestions(user, cb){
 			var uid = user.uid;
 			var qstring = 'select * from questions where uid != ($1) and status = 0 order by qid desc';
 			client.query(qstring, [uid], function(err, result){
+				done();
+				client.end();
+				console.log(result);
+				if(err){
+					console.log('error');
+					cb(err);
+				} else {
+					console.log('result');
+					cb(undefined, result);
+				}
+			});
+		}
+	});
+}
+
+
+
+
+function getQuestion(qid, cb){
+	pg.connect(cstr, function(err, client, done){
+		if(err){
+			cb(err);
+		} else {
+			var qstring = 'select * from questions where qid = ($1)';
+			client.query(qstring, [qid], function(err, result){
 				done();
 				client.end();
 				console.log(result);
@@ -358,5 +385,6 @@ module.exports = {
   addQuestion		: addQuestion,
   userQuest			: userQuest,
   userAns			: userAns,
-  openQuestions		: openQuestions
+  openQuestions		: openQuestions,
+  getQuestion       : getQuestion
 };
