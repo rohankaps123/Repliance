@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Repliance | <%= title %></title>
+  <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'/>
 </head>
@@ -10,23 +11,26 @@
   <img src="/images/squid_pink.png" class="pinkSquidsmall">
   <h1 class="title"><%= title %></h1>
 
+  <nav class="navbar navbar-default" role="navigation">
   <div class="navbar">
-    <a href="/main"><img src="/images/squid_home.png" class="navImg"></a> 
-    <ul class="navElements">        
-      <p>Welcome <%= username %>!</p>
+    <ul class="nav navbar-nav navElements">
+      <a href="/main"><img src="/images/squid_home.png" class="navImg"></a>
+      <p align = "center">Welcome <%= username %>!</p>
       <li><a href="/user/logout">Logout</a></li>
-      <li><a href="/account">Account</a><li>
-        <li><a href="/myquestions">My Questions</a><li>
-          <li><a href="/myanswers">My Answers</a><li>
-            <li><a href="/askquestion">Ask Question</a><li>
-            </ul>
-          </div>
+      <li><a href="/account">Account</a></li>
+      <li><a href="/myquestions">My Questions</a></li>
+      <li class = "active"><a href="/myanswers">My Answers</a></li>
+      <li><a href="/askquestion">Ask Questions</a></li>
+    </ul>
+  </div>
+</nav>
+
 
   <div>
    <ul>
     <%
        for(var i = 0; i < data.rows.length; i++){
-     %>      
+     %>
     <div class= "questionList">
     <li><%= data.rows[i].reply %></li><br>
     <li ><strong>Score:</strong> <%=  data.rows[i].score %> </li>

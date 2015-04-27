@@ -132,7 +132,11 @@ button:hover{
 }
 
 .navbar {
-	width: 200px;
+	width:200px;
+	margin-right: 0;
+	margin-left: 0;
+	padding: 0;
+	max-height: none;
 	height: 100%;
 	background-color: #fff;
 	top: 0px;
@@ -156,13 +160,18 @@ button:hover{
 
 .navImg {
 	position: relative;
-	left: 12.5%;
+	left: 10.5%;
 	height: 150px;
 }
 
 .navElements > li > a {
 	text-decoration: none;
 }
+
+.navbar-nav,.navbar-nav > li {
+	float:none !important;
+}
+
 
 .backLink{
 	list-style-type: none;
