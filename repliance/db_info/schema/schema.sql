@@ -1,4 +1,4 @@
-create table users (
+﻿create table users (
 
 uid int,
 username varchar(20) NOT NULL UNIQUE,
@@ -7,7 +7,7 @@ fname varchar(50),
 lname varchar(50),
 score int,
 primary key (uid),
-unique key uk_username(username)
+constraint uk_username unique (username)
 );
 
 create table answers(
@@ -47,6 +47,9 @@ primary key (qid, aid)
 
 );
 
+CREATE SEQUENCE seq_answers INCREMENT 1 START 100 CACHE 10;
+CREATE SEQUENCE seq_questions INCREMENT 1 START 100 CACHE 10;
+CREATE SEQUENCE seq_users INCREMENT 1 START 100 CACHE 10;
 
-insert into users values(2,'test','99999','test','test',0);
-insert into questions values(1,2,0,10,0,0,NULL,'this is body', 'this is title', 0);
+insert into users values(1,'test','99999','test','test',0);
+insert into questions values(1,1,0,10,0,0,NULL,'this is body', 'this is title', 0);

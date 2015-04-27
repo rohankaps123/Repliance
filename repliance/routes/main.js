@@ -9,6 +9,7 @@ var online = users.online;
 // ## main
 // The main user view.
 router.get('/', function(req, res) {
+  var message = req.flash('main') || '';
   var user = req.session.user;
     if (user === undefined || online[user.uid] === undefined) {
       req.flash('auth', 'Not logged in!');
@@ -23,6 +24,9 @@ router.get('/', function(req, res) {
         else{
           res.render('main', {title : 'Repliance',
                       username : user.username,
+                      fname : user.fname,
+                      lname : user.lname,
+                      message : message,
                       data : data });
         }
       });

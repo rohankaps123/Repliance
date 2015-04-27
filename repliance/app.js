@@ -23,6 +23,7 @@ var quest       = require('./routes/myquestions');
 var acc         = require('./routes/account');
 var ans         = require('./routes/myanswers');
 var ask         = require('./routes/askquestion');
+var reply       = require('./routes/reply');
 // Create the express application:
 var app			= express();
 
@@ -53,6 +54,7 @@ app.use('/myquestions', quest);
 app.use('/account', acc);
 app.use('/myanswers', ans);
 app.use('/askquestion', ask);
+app.use('/reply', reply);
 
 app.get('/', function (req, res) {
   res.redirect('/user/login');
