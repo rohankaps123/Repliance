@@ -111,6 +111,10 @@ button:hover{
 	z-index: -1;
 }
 
+.iceSquid{
+	width: 40%;
+}
+
 .logAndAdd {
 	text-align: center;
 	position: relative;
@@ -203,6 +207,7 @@ button:hover{
 	padding-left: 40px;
 	line-height: 10px;
 	color: black;
+
 }
 
 
