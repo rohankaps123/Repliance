@@ -31,8 +31,8 @@
               for(var i = 0; i < data.rows.length; i++){
                 %>
                   <li class= "questionList">
-                      <p class = "myQ"><strong>Question: </strong><%= data.rows[i].title %> </p>
-                      <p class = "myQ"><strong>Question Details: </strong><%=  data.rows[i].bodytext %> </p>
+                      <p class = "myQTitle"><%= data.rows[i].title %> </p>
+                      <p class = "myQ"><%=  data.rows[i].bodytext %> </p><br>
                       <p class = "myQ"><strong># of Replies: </strong><%= data.rows[i].repliestotal %> </p>
                       <p class = "myQ"><strong>Max Replies: </strong><%= data.rows[i].replieslimit %> </p>
                   </li>
