@@ -139,8 +139,9 @@ button:hover{
 	max-height: none;
 	height: 100%;
 	background-color: #fff;
-	top: 0px;
-	right: 0px;
+	top: 0;
+	right: 0;
+	bottom: 0;
 	position: absolute;
 	padding-bottom: 5000px;
 	margin-bottom: -5000px;
@@ -186,6 +187,7 @@ button:hover{
 	height: 100px;
 	font-size: 16px;
 	font-family: 'Ubuntu', sans-serif;
+	color: black;
 }
 
 .qText {
@@ -193,6 +195,7 @@ button:hover{
 	height: 375px;
 	font-size: 16px;
 	font-family: 'Ubuntu', sans-serif;
+	color: black;
 }
 
 .qList{
@@ -200,6 +203,12 @@ button:hover{
 	list-style-type: none;
 	padding-left: 40px;
 	line-height: 10px;
+	color: black;
+}
+
+
+.numList{
+	color: black;
 }
 
 .questionList{
@@ -215,4 +224,8 @@ button:hover{
 	padding-bottom: 20px;
 	padding-left: 40px;
 	padding-right: 20%;
+}
+
+.myQ{
+
 }
