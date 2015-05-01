@@ -261,12 +261,40 @@ function addAnswer(qid, uid, text, cb) {
 									var qstring3 = 'update questions set repliestotal = repliestotal + 1 where qid = ' + qid + ';';
 									    client.query(qstring3, function(err, result) {
 									    done();
-									    client.end();
-
+									    //client.end();
 											if (err) {
 												cb(err);
 											} else {
-												cb(undefined, newAID);
+
+												var qstring4 = 'select * from questions where qid = ' + qid + ';';
+												    client.query(qstring4, function(err, result) {
+												    done();
+												    //client.end();
+														if (err) {
+															cb(err);
+														} else {
+
+															//"Was this the final answer?"
+															if (result.rows[0].repliestotal >= result.rows[0].replieslimit){
+
+																var qstring5 = 'update questions set status = 1 where qid = ' + qid + ';';
+																    client.query(qstring5, function(err, result) {
+																    done();
+																    client.end();
+																		if (err) {
+																			cb(err);
+																		}
+																		else{
+																			cb(undefined, newAID);
+																		}
+																	});
+															}
+															//"No it wasn't, leave the question open and move on."
+															else{
+																cb(undefined, newAID);
+															}
+														}
+													});
 											}
 
 										});
