@@ -177,15 +177,6 @@ button:hover{
 	float:none !important;
 }
 
-
-.backLink{
-	list-style-type: none;
-	color: #fff;
-	font-size: 20px;
-	font-family: 'Ubuntu', sans-serif;
-	display: block;
-}
-
 .qTitle {
 	width: 800px;
 	height: 100px;
