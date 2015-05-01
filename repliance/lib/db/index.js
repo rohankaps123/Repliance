@@ -10,7 +10,7 @@ var cstr = 'postgres://postgres:postgres@localhost/repliance';
 function lookup(username, password, cb) {
     pg.connect(cstr, function(err, client, done) {
 		if (err) {
-			console.log(err);
+			//console.log(err);
 			cb(err);
 		} else {
 		    //using bind variables to prevent sql injection
@@ -254,11 +254,23 @@ function addAnswer(qid, uid, text, cb) {
 								var qstring2 = 'insert into qa values(($1),($2));';
 								    client.query(qstring2, [qid, newAID], function(err, result) {
 								    done();
-								    client.end();
+								    //client.end();//put back?
 							        if (err) {
 										cb(err);
 									} else {
-										cb(undefined, newAID);
+									var qstring3 = 'update questions set repliestotal = repliestotal + 1 where qid = ' + qid + ';';
+									    client.query(qstring3, function(err, result) {
+									    done();
+									    client.end();
+
+											if (err) {
+												cb(err);
+											} else {
+												cb(undefined, newAID);
+											}
+
+										});
+
 									}
 								});
 							}
@@ -346,7 +358,6 @@ function userAns(user, cb){
 			client.query(qstring, [uid], function(err, result){
 				done();
 				client.end();
-				console.log(result);
 				if(err){
 					console.log('error');
 					cb(err);
@@ -372,7 +383,7 @@ function openQuestions(user, cb){
 			client.query(qstring, [uid], function(err, result){
 				done();
 				client.end();
-				console.log(result);
+				//console.log(result);
 				if(err){
 					console.log('error');
 					cb(err);
@@ -397,7 +408,7 @@ function getQuestion(qid, cb){
 			client.query(qstring, [qid], function(err, result){
 				done();
 				client.end();
-				console.log(result);
+				//console.log(result);
 				if(err){
 					console.log('error');
 					cb(err);
