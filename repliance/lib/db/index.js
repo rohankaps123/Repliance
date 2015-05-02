@@ -484,17 +484,48 @@ function upvote(aid, uid, cb){
 			cb(err);
 		}
 		else{
-			var qstring = 'update answers set score = 2 where aid = ' + aid;
+			var qstring = 'select * from qa where aid = ' + aid;
 			client.query(qstring, function(err, result){
 				done();
-				client.end();
-				if(err){
+				if (err){
 					cb(err);
 				}
 				else{
-					cb(undefined, aid);
-				}
 
+					if(result.rows[0] === undefined){
+						cb(err);
+					}
+
+					var qid = result.rows[0].qid;
+
+					var qstring2 = 'select * from questions where qid = ' + qid;
+					client.query(qstring2, function(err, result){
+						done();
+						if (err){
+							cb(err);
+						}
+						else{
+							var quid = result.rows[0].uid;
+
+							if (quid !== uid){
+								cb(err);
+							}
+							else{
+								var qstring3 = 'update answers set score = 2 where aid = ' + aid;
+								client.query(qstring3, function(err, result){
+									done();
+									client.end();
+									if(err){
+										cb(err);
+									}
+									else{
+										cb(undefined, qid);
+									}	
+								});
+							}
+						}
+					});
+				}
 			});
 		}
 
@@ -507,17 +538,48 @@ function downvote(aid, uid, cb){
 			cb(err);
 		}
 		else{
-			var qstring = 'update answers set score = 0 where aid = ' + aid;
+			var qstring = 'select * from qa where aid = ' + aid;
 			client.query(qstring, function(err, result){
 				done();
-				client.end();
-				if(err){
+				if (err){
 					cb(err);
 				}
 				else{
-					cb(undefined, aid);
-				}
 
+					if(result.rows[0] === undefined){
+						cb(err);
+					}
+
+					var qid = result.rows[0].qid;
+
+					var qstring2 = 'select * from questions where qid = ' + qid;
+					client.query(qstring2, function(err, result){
+						done();
+						if (err){
+							cb(err);
+						}
+						else{
+							var quid = result.rows[0].uid;
+
+							if (quid !== uid){
+								cb(err);
+							}
+							else{
+								var qstring3 = 'update answers set score = 0 where aid = ' + aid;
+								client.query(qstring3, function(err, result){
+									done();
+									client.end();
+									if(err){
+										cb(err);
+									}
+									else{
+										cb(undefined, qid);
+									}	
+								});
+							}
+						}
+					});
+				}
 			});
 		}
 
