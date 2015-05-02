@@ -444,7 +444,7 @@ function openQuestions(user, cb){
 		} else {
 			var uid = user.uid;
 			//var qstring = 'select * from questions where uid != ($1) and status = 0 order by qid desc';
-			var qstring = 'SELECT * FROM Questions WHERE status = 0 AND uid <> ($1) AND qid NOT IN ( SELECT questions.qid FROM questions INNER JOIN qa ON questions.qid = qa.qid INNER JOIN answers ON answers.aid = qa.aid WHERE answers.uid = ($1));';
+			var qstring = 'SELECT * FROM Questions WHERE status = 0 AND uid <> ($1) AND qid NOT IN ( SELECT questions.qid FROM questions INNER JOIN qa ON questions.qid = qa.qid INNER JOIN answers ON answers.aid = qa.aid WHERE answers.uid = ($1)) ORDER BY qid DESC;';
 			client.query(qstring, [uid], function(err, result){
 				done();
 				client.end();
