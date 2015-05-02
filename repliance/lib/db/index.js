@@ -222,7 +222,7 @@ function addQuestion(uid, text, title, limit, cb) {
 								cb(undefined, newQID);
 							}
 					});
-				
+
 				}
 			});
 		}
@@ -303,7 +303,7 @@ function addAnswer(qid, uid, text, cb) {
 								});
 							}
 					});
-				
+
 				}
 			});
 		}
@@ -520,7 +520,7 @@ function upvote(aid, uid, cb){
 									else{
 										console.log(qid + "the index callback");
 										cb(undefined, qid);
-									}	
+									}
 								});
 							}
 						}
@@ -574,7 +574,7 @@ function downvote(aid, uid, cb){
 									}
 									else{
 										cb(undefined, qid);
-									}	
+									}
 								});
 							}
 						}
