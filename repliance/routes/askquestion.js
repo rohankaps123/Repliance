@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
     res.redirect('/user/login');
   }
   else {
-  res.render('askquestion', { title : 'Ask Question', username: username});
+  res.render('askquestion', { title : 'Ask Question', score : user.score, username: username});
 }
 });
 

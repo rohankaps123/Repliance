@@ -18,6 +18,7 @@
     <ul class="nav navbar-nav navElements">
       <a href="/main"><img src="/images/squid_home.png" class="navImg"></a>
       <p align = "center">Welcome <%= username %>!</p>
+      <p align = "center">Score: <%= score %></p>
       <li class="active"><a href="/main">Home</a></li>
       <li><a href="/account">Account</a></li>
       <li><a href="/myquestions">My Questions</a></li>
@@ -41,7 +42,7 @@
                             <div class="panel-title">
                               <p class = "myQTitle"><%= data.rows[i].title %> </p>
                               <p class = "myQ"><%=  data.rows[i].bodytext %> </p><br>
-                            <span class="pull-right clickable"><a href='#1' class="btn btn-default" role="b­utt­on">Reply</a></span>
+                            <span class="pull-right clickable"><a href='#1' class="btn btn-default" role="b­utt­on">Expand</a></span>
                         </div>
                       </div>
                         <div class="panel-body">

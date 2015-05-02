@@ -42,6 +42,7 @@ router.get('/', function(req, res) {
                               password  : password,
                               fname     : fname,
                               lname     : lname,
+                              score : user.score,
                               score     : score
 
                             });

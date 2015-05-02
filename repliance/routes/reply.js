@@ -31,6 +31,7 @@ router.get('/', function(req, res) {
 					  replieslimit : data.rows[0].replieslimit};
 		res.render('reply', { title : 'Reply to a Question',
 				   username: username,
+				   score : user.score,
 				   question : question});
 	  }
 	});
