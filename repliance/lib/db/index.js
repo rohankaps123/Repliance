@@ -449,7 +449,32 @@ function getQuestion(qid, cb){
 	});
 }
 
-
+function getReplies(qid, uid, cb){
+	pg.connect(cstr, function(err, client, done){
+		if(err){
+			cb(err);
+		}
+		else{
+			var qstring = 'select answers.score, answers.aid, answers.reply, questions.repliestotal, questions.replieslimit, questions.title, questions.bodytext, questions.qid from questions inner join qa on questions.qid = qa.qid inner join answers on answers.aid = qa.aid inner join users on users.uid = answers.uid where questions.qid = ' + qid + ' and questions.uid = ' + uid;
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				if(err){
+					console.log('error');
+					cb(err);
+				}
+				else{
+					if(result.rows[0] === undefined){
+						cb('Not your question');
+					}
+					else{
+						cb(undefined, result);
+					}
+				}
+			});
+		}
+	});
+}
 
 
 
@@ -469,5 +494,6 @@ module.exports = {
   userAns			: userAns,
   openQuestions		: openQuestions,
   getQuestion       : getQuestion,
-  addAnswer         : addAnswer
+  addAnswer         : addAnswer,
+  getReplies		: getReplies
 };
