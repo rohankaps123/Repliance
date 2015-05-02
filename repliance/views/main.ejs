@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'/>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body class="homeBackground">
-    <img src="/images/squid_green.png" class="greenSquidsmall">
-    <img src="/images/squid_pink.png" class="pinkSquidsmall">
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'/>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body class="homeBackground">
+
+  <img src="/images/squid_green.png" class="greenSquidsmall">
+  <img src="/images/squid_pink.png" class="pinkSquidsmall">
 
   <nav class="navbar navbar-default" role="navigation">
   <div class="navbar">
@@ -25,10 +28,10 @@
   </div>
 </nav>
   <div class = "main">
-      <ul class = "qList">
-        <li><img src="/images/squid_repliance_ice.png" class = "iceSquid"></li>
-        <%
-        for(var i = 0; i < data.rows.length; i++){
+    <ul class = "qList">
+      <li><img src="/images/squid_repliance_ice.png" class = "iceSquid"></li>
+      <%
+      for(var i = 0; i < data.rows.length; i++){
         %>
         <li class= "questionList">
           <p class = "myQTitle"><%= data.rows[i].title %> </p>
@@ -36,13 +39,15 @@
           <p class = "myQ"><strong># of Replies: </strong><%= data.rows[i].repliestotal %> </p>
           <p class = "myQ"><strong>Max Replies: </strong><%= data.rows[i].replieslimit %> </p>
           <a href="/reply?qid=<%=data.rows[i].qid%>" class="btn btn-default" role="b­utt­on">Reply</a>
-
         </li>
+        <%
+      }
+      %>
+    </ul>
+  </div>
 
-<%
-   }
-%>
-      </ul>
-    </div>
-  </body>
+  <script>
+
+  </script>
+</body>
 </html>

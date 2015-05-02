@@ -35,6 +35,7 @@
                       <p class = "myQ"><%=  data.rows[i].bodytext %> </p><br>
                       <p class = "myQ"><strong># of Replies: </strong><%= data.rows[i].repliestotal %> </p>
                       <p class = "myQ"><strong>Max Replies: </strong><%= data.rows[i].replieslimit %> </p>
+                      <a href = "/question?qid=<%=data.rows[i].qid%>" class="btn btn-default" role="b­utt­on">Show Answers</a>
                   </li>
                 <%
               }
