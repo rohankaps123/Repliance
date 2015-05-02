@@ -34,7 +34,7 @@
       for(var i = 0; i < data.rows.length; i++){
         %>
         <li>
-          <div class="qlistel">
+          <div class="qlistel" id='#1'>
           <div class="container">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -43,7 +43,7 @@
                               <p class = "myQ"><%=  data.rows[i].bodytext %> </p><br>
                               <p class = "myQ"><strong># of Replies: </strong><%= data.rows[i].repliestotal %> </p>
                               <p class = "myQ"><strong>Max Replies: </strong><%= data.rows[i].replieslimit %> </p>
-                            <span class="pull-right clickable"><a href='#' class="btn btn-default" role="b­utt­on">Reply</a></span>
+                            <span class="pull-right clickable"><a href='#1' class="btn btn-default" role="b­utt­on">Reply</a></span>
                         </div>
                       </div>
                         <div class="panel-body">
