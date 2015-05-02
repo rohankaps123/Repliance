@@ -24,18 +24,19 @@
   </div>
   </nav>
 
-  <p class = "questionTitle"><%= answers.rows[0].title %></p>
-  <p class = "questionBody"><%= answers.rows[0].bodytext %></p>
-  <p class = "repliesTotal"><%= answers.rows[0].repliestotal %></p>
-  <p class = "repliesLimit"><%= answers.rows[0].replieslimit %></p>
-
-  <ul class = "answerList"> 
+  <div class = "questionList">
+  <p class = "myQTitle"><%= answers.rows[0].title %></p>
+  <p class = "myQ"><%= answers.rows[0].bodytext %></p>
+  <p class = "myQ"><strong># of Replies: </strong><%= answers.rows[0].repliestotal %></p>
+  <p class = "myQ"><strong>Max Replies: </strong><%= answers.rows[0].replieslimit %></p>
+</div>
+  <ul class = "questionList"> 
   	<%
   	for(var i = 0; i < answers.rows.length; i++){
   		%>
   		<li class = "answerPoint">
   			<p class = "anAnswer"> <%= answers.rows[i].reply %></p>
-  			<p class = "AnswerScore"> <%= answers.rows[i].score %></p>
+  			<p class = "AnswerScore">Score: <%= answers.rows[i].score %></p>
   			<a href = "/question/upvote?aid=<%=answers.rows[i].aid%>" class="btn btn-default" role="b­utt­on">Good Answer</a>
   			<a href = "/question/downvote?aid=<%=answers.rows[i].aid%>" class="btn btn-default" role="b­utt­on">Bad Answer</a>
   		</li>
