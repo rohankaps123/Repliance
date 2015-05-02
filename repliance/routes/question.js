@@ -32,7 +32,6 @@ router.get('/', function(req, res){
 router.get('/upvote', function(req, res){
 	var user = req.session.user;
 	var aid = req.query.aid;
-	var qid = req.query.qid;
 	console.log(aid);
 	if(user === undefined || online[user.uid] === undefined) {
 		req.flash('auth', 'Not logged in!');
@@ -42,10 +41,10 @@ router.get('/upvote', function(req, res){
 		dblib.upvote(aid, user.uid, function(error, data){
 			if(error){
 				req.flash('upVote', error);
-				res.redirect('/question?qid=<%qid&>');
+				res.redirect('/question?qid=<%=data&>');
 			}
 			else{
-				res.redirect('/question?qid=<%qid%>');
+				res.redirect('/question?qid=<%=data%>');
 			}
 		});
 	}
@@ -63,10 +62,10 @@ router.get('/downvote', function(req, res){
 		dblib.downvote(aid, user.uid, function(error, data){
 			if(error){
 				req.flash('upVote', error);
-				res.redirect('/question?qid=<%qid&>');
+				res.redirect('/question?qid=<%=data&>');
 			}
 			else{
-				res.redirect('/question?qid=<%qid%>');
+				res.redirect('/question?qid=<%=data%>');
 			}
 		});
 	}
