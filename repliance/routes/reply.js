@@ -10,6 +10,7 @@ var online = users.online;
 *  Post A New Question
 **/
 
+/*
 router.get('/', function(req, res) {
   var user = req.session.user;
   var qid = req.query.qid;
@@ -36,7 +37,7 @@ router.get('/', function(req, res) {
 	  }
 	});
   }
-});
+});*/
 
 router.post('/reply', function(req, res) {
 
