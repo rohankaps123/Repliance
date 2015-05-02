@@ -274,47 +274,64 @@ function addAnswer(qid, uid, text, cb) {
 											        if (err) {
 														cb(err);
 													} else {
-													var qstring3 = 'update questions set repliestotal = repliestotal + 1 where qid = ' + qid + ';';
-													    client.query(qstring3, function(err, result) {
-													    done();
-													    //client.end();
-															if (err) {
+														var qstringSumScore = 'select sum(score) from answers where uid = ' + uid;
+														client.query(qstringSumScore, function(err, result){
+															done();
+															if(err){
 																cb(err);
-															} else {
+															}
+															else{
+																var qstringSetScore = 'update users set score = ' + result.rows[0].sum +' where uid = ' + uid;
+																client.query(qstringSetScore, function(err, result){
+																	done();
+																	if(err){
+																		cb(err);
+																	}
+																	else{
+																		var qstring3 = 'update questions set repliestotal = repliestotal + 1 where qid = ' + qid + ';';
+																	    client.query(qstring3, function(err, result) {
+																	    done();
+																	    //client.end();
+																			if (err) {
+																				cb(err);
+																			} else {
 
-																var qstring4 = 'select * from questions where qid = ' + qid + ';';
-																    client.query(qstring4, function(err, result) {
-																    done();
-																    //client.end();
-																		if (err) {
-																			cb(err);
-																		} else {
-
-																			//"Was this the final answer?"
-																			if (result.rows[0].repliestotal >= result.rows[0].replieslimit){
-
-																				var qstring5 = 'update questions set status = 1 where qid = ' + qid + ';';
-																				    client.query(qstring5, function(err, result) {
+																				var qstring4 = 'select * from questions where qid = ' + qid + ';';
+																				    client.query(qstring4, function(err, result) {
 																				    done();
-																				    client.end();
+																				    //client.end();
 																						if (err) {
 																							cb(err);
-																						}
-																						else{
-																							cb(undefined, newAID);
+																						} else {
+
+																							//"Was this the final answer?"
+																							if (result.rows[0].repliestotal >= result.rows[0].replieslimit){
+
+																								var qstring5 = 'update questions set status = 1 where qid = ' + qid + ';';
+																								    client.query(qstring5, function(err, result) {
+																								    done();
+																								    client.end();
+																										if (err) {
+																											cb(err);
+																										}
+																										else{
+																											cb(undefined, newAID);
+																										}
+																									});
+																							}
+																							//"No it wasn't, leave the question open and move on."
+																							else{
+																								cb(undefined, newAID);
+																							}
 																						}
 																					});
 																			}
-																			//"No it wasn't, leave the question open and move on."
-																			else{
-																				cb(undefined, newAID);
-																			}
-																		}
-																	});
+
+																		});
+																	}
+																});
 															}
-
 														});
-
 													}
 												});
 											}
@@ -532,13 +549,42 @@ function upvote(aid, uid, cb){
 								var qstring3 = 'update answers set score = 2 where aid = ' + aid;
 								client.query(qstring3, function(err, result){
 									done();
-									client.end();
+									//client.end();
 									if(err){
 										cb(err);
 									}
 									else{
-										console.log(qid + "the index callback");
-										cb(undefined, qid);
+										var qstring4 = 'select uid from answers where aid = ' +aid;
+										client.query(qstring4, function(err, result){
+											done();
+											if(err){
+												cb(err);
+											}
+											else{
+												var answerUID = result.rows[0].uid;
+												var qstring5 = 'select sum(score) from answers where uid = ' + answerUID;
+												client.query(qstring5, function(err, result){
+													done();
+													if(err){
+														cb(err);
+													}
+													else{
+														var qstring6 = 'update users set score = ' + result.rows[0].sum +' where uid = ' + answerUID;
+														client.query(qstring6, function(err, result){
+															done();
+															client.end();
+															if(err){
+																cb(err);
+															}
+															else{
+																console.log(qid + "the index callback");
+																cb(undefined, qid);
+															}
+														});
+													}
+												});
+											}
+										});
 									}
 								});
 							}
@@ -587,12 +633,42 @@ function downvote(aid, uid, cb){
 								var qstring3 = 'update answers set score = 0 where aid = ' + aid;
 								client.query(qstring3, function(err, result){
 									done();
-									client.end();
+									//client.end();
 									if(err){
 										cb(err);
 									}
 									else{
-										cb(undefined, qid);
+										var qstring4 = 'select uid from answers where aid = ' + aid;
+										client.query(qstring4, function(err, result){
+											done();
+											if(err){
+												cb(err);
+											}
+											else{
+												var answerUID = result.rows[0].uid;
+												var qstring5 = 'select sum(score) from answers where uid = ' + answerUID;
+												client.query(qstring5, function(err, result){
+													done();
+													if(err){
+														cb(err);
+													}
+													else{
+														var qstring6 = 'update users set score = ' + result.rows[0].sum +' where uid = ' + answerUID;
+														client.query(qstring6, function(err, result){
+															done();
+															client.end();
+															if(err){
+																cb(err);
+															}
+															else{
+																console.log(qid + "the index callback");
+																cb(undefined, qid);
+															}
+														});
+													}
+												});
+											}
+										});
 									}
 								});
 							}
