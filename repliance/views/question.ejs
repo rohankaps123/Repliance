@@ -24,17 +24,17 @@
   </div>
   </nav>
 
-  <div class = "questionList">
+  <div class = "qWithAnswers">
   <p class = "myQTitle"><%= answers.rows[0].title %></p>
   <p class = "myQ"><%= answers.rows[0].bodytext %></p>
   <p class = "myQ"><strong># of Replies: </strong><%= answers.rows[0].repliestotal %></p>
   <p class = "myQ"><strong>Max Replies: </strong><%= answers.rows[0].replieslimit %></p>
 </div>
-  <ul class = "questionList"> 
+  <ul> 
   	<%
   	for(var i = 0; i < answers.rows.length; i++){
   		%>
-  		<li class = "answerPoint">
+  		<li class = "answerList">
   			<p class = "anAnswer"> <%= answers.rows[i].reply %></p>
   			<p class = "AnswerScore">Score: <%= answers.rows[i].score %></p>
   			<a href = "/question/upvote?aid=<%=answers.rows[i].aid%>" class="btn btn-default" role="b­utt­on">Good Answer</a>

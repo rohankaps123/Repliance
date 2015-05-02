@@ -229,6 +229,38 @@ button:hover{
 	padding-right: 40px;
 }
 
+.answerList{
+	margin: 10px 0;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 17px;
+	border-radius: 10px;
+	list-style-type: none;
+	display: block;
+	background-color: white;
+	width: 62%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 80px;
+}
+
+.qWithAnswers{
+	position: relative;
+	margin: 10px 0;
+	margin-left: 40px;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 17px;
+	border-radius: 10px;
+	list-style-type: none;
+	display: block;
+	background-color: white;
+	width: calc(62% - 22px);
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
 .myQ{
 	line-height: 20px;
 }

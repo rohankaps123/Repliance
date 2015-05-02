@@ -41,12 +41,13 @@
                             <div class="panel-title">
                               <p class = "myQTitle"><%= data.rows[i].title %> </p>
                               <p class = "myQ"><%=  data.rows[i].bodytext %> </p><br>
-                              <p class = "myQ"><strong># of Replies: </strong><%= data.rows[i].repliestotal %> </p>
-                              <p class = "myQ"><strong>Max Replies: </strong><%= data.rows[i].replieslimit %> </p>
-                            <span class="pull-right clickable"><a href='#' class="btn btn-default" role="b­utt­on">Reply</a></span>
+                             
+                            <span class="pull-right clickable"><a href='#' class="btn btn-default" role="b­utt­on">Expand</a></span>
                         </div>
                       </div>
                         <div class="panel-body">
+                         <p class = "myQ"><strong># of Replies: </strong><%= data.rows[i].repliestotal %> </p>
+                         <p class = "myQ"><strong>Max Replies: </strong><%= data.rows[i].replieslimit %> </p><br>
                           <form  id="replyform" method="post" action="/reply/reply" >
                             <textarea class="replyText" name="aText" maxlength="1500" placeholder= "Add Your Answer"></textarea> <br>
                             <br>
