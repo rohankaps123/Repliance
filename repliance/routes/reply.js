@@ -19,7 +19,7 @@ router.get('/', function(req, res) {
     req.flash('auth', 'Not logged in!');
     res.redirect('/user/login');
   } else {
-	dblib.getQuestion(user, function(error, data){
+	dblib.openQuestions(user, function(error, data){
 	  if(error){
 		req.flash('reply', error);
 		res.redirect('/reply?qid='+qid);

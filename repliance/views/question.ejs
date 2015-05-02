@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Repliance | <%= title %></title>
+  	<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+  	<link rel='stylesheet' href='/stylesheets/style.css' />
+  	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'/>
+</head>
+<body class="homeBackground">
+  <img src="/images/squid_green.png" class="greenSquidsmall">
+  <img src="/images/squid_pink.png" class="pinkSquidsmall">
+
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar">
+    <ul class="nav navbar-nav navElements">
+      <a href="/main"><img src="/images/squid_home.png" class="navImg"></a>
+      <p align = "center">Welcome <%= username %>!</p>
+      <li><a href="/main">Home</a></li>
+      <li><a href="/account">Account</a></li>
+      <li class="active"><a href="/myquestions">My Questions</a></li>
+      <li><a href="/myanswers">My Answers</a></li>
+      <li><a href="/askquestion">Ask Questions</a></li>
+      <li><a href="/user/logout">Logout</a></li>
+    </ul>
+  </div>
+  </nav>
+
+  <p class = "questionTitle"><%= answers.rows[0].title %></p>
+  <p class = "questionBody"><%= answers.rows[0].bodytext %></p>
+  <p class = "repliesTotal"><%= answers.rows[0].repliestotal %></p>
+  <p class = "repliesLimit"><%= answers.rows[0].replieslimit %></p>
+
+  <ul class = "answerList"> 
+  	<%
+  	for(var i = 0; i < data.rows.length; i++){
+  		%>
+  		<li class = "answerPoint">
+  			<p class = "anAnswer"> <%= data.rows[i].reply %></p>
+  			<p class = "AnswerScore"> <%= data.rows[i].score %></p>
+  			<a href = "/question/upvote?aid=<%data.rows[i].aid%>" class="btn btn-default" role="b­utt­on">Good Answer</a>
+  			<a href = "/question/downvote?aid=<%data.rows[i].aid%>" class="btn btn-default" role="b­utt­on">Bad Answer</a>
+  		</li>
+  		<%
+  	}
+  	%>
+  </ul>
+</body>
+</html>

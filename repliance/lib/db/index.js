@@ -245,7 +245,7 @@ function addAnswer(qid, uid, text, cb) {
 					cb(error);
 				} else {
 				    var qstring = 'insert into answers values(($1),($2),($3),($4));';
-					client.query(qstring,  [newAID, uid, 0, text], function(err, result) {
+					client.query(qstring,  [newAID, uid, 1, text], function(err, result) {
 							done();
 							//client.end();
 							if (err) {
@@ -450,8 +450,78 @@ function getQuestion(qid, cb){
 }
 
 
+function getReplies(qid, uid, cb){
+	pg.connect(cstr, function(err, client, done){
+		if(err){
+			cb(err);
+		}
+		else{
+			var qstring = 'select answers.score, answers.aid, answers.reply, questions.repliestotal, questions.replieslimit, questions.title, questions.bodytext, questions.qid from questions inner join qa on questions.qid = qa.qid inner join answers on answers.aid = qa.aid inner join users on users.uid = answers.uid where questions.qid = ' + qid + ' and questions.uid = ' + uid;
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				if(err){
+					console.log('error');
+					cb(err);
+				}
+				else{
+					if(result.rows[0] === undefined){
+						cb('Not your question');
+					}
+					else{
+						cb(undefined, result);
+					}
+				}
+			});
+		}
+	});
+}
 
+function upvote(aid, uid, cb){
+	pg.connect(cstr, function(err, client, done){
+		if (err){
+			cb(err);
+		}
+		else{
+			var qstring = 'update answers set score = 2 where aid = ' + aid;
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				if(err){
+					cb(err);
+				}
+				else{
+					cb(undefined, aid);
+				}
 
+			});
+		}
+
+	});
+}
+
+function downvote(aid, uid, cb){
+	pg.connect(cstr, function(err, client, done){
+		if (err){
+			cb(err);
+		}
+		else{
+			var qstring = 'update answers set score = 0 where aid = ' + aid;
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				if(err){
+					cb(err);
+				}
+				else{
+					cb(undefined, aid);
+				}
+
+			});
+		}
+
+	});
+}
 
 /**
  * Export the functions
@@ -469,5 +539,8 @@ module.exports = {
   userAns			: userAns,
   openQuestions		: openQuestions,
   getQuestion       : getQuestion,
-  addAnswer         : addAnswer
+  addAnswer         : addAnswer,
+  getReplies		: getReplies,
+  upvote			: upvote,
+  downvote			: downvote
 };
