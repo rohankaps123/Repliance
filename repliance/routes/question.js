@@ -21,7 +21,6 @@ router.get('/', function(req, res){
   				res.redirect('/myquestions');
   			}
   			else{
-  				console.log(data);
   				res.render('question', {username : user.username,
   										answers : data});
   			}
@@ -41,10 +40,11 @@ router.get('/upvote', function(req, res){
 		dblib.upvote(aid, user.uid, function(error, data){
 			if(error){
 				req.flash('upVote', error);
-				res.redirect('/question?qid=<%=data&>');
+				res.redirect('/question?qid='+data);
 			}
 			else{
-				res.redirect('/question?qid=<%=data%>');
+				console.log(data);
+				res.redirect('/question?qid='+data);
 			}
 		});
 	}
@@ -62,10 +62,10 @@ router.get('/downvote', function(req, res){
 		dblib.downvote(aid, user.uid, function(error, data){
 			if(error){
 				req.flash('upVote', error);
-				res.redirect('/question?qid=<%=data&>');
+				res.redirect('/question?qid='+data);
 			}
 			else{
-				res.redirect('/question?qid=<%=data%>');
+				res.redirect('/question?qid='+data);
 			}
 		});
 	}

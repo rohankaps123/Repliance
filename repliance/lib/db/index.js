@@ -460,7 +460,6 @@ function getReplies(qid, uid, cb){
 			client.query(qstring, function(err, result){
 				done();
 				client.end();
-				console.log(result);
 				if(err){
 					console.log('error');
 					cb(err);
@@ -519,6 +518,7 @@ function upvote(aid, uid, cb){
 										cb(err);
 									}
 									else{
+										console.log(qid + "the index callback");
 										cb(undefined, qid);
 									}	
 								});
