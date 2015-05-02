@@ -8,7 +8,7 @@ var online = users.online;
 
 router.get('/', function(req, res){
 	var user = req.session.user;
-	var qid = req.queury.qid;
+	var qid = req.query.qid;
 	console.log(qid);
 	if (user === undefined || online[user.uid] === undefined) {
     req.flash('auth', 'Not logged in!');
@@ -21,7 +21,9 @@ router.get('/', function(req, res){
   				res.redirect('/myquestions');
   			}
   			else{
-  				res.render('question', {answers : result});
+  				console.log(data);
+  				res.render('question', {username : user.username,
+  										answers : data});
   			}
   		});
   	}

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Repliance | <%= title %></title>
   	<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
   	<link rel='stylesheet' href='/stylesheets/style.css' />
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'/>
@@ -32,13 +31,13 @@
 
   <ul class = "answerList"> 
   	<%
-  	for(var i = 0; i < data.rows.length; i++){
+  	for(var i = 0; i < answers.rows.length; i++){
   		%>
   		<li class = "answerPoint">
-  			<p class = "anAnswer"> <%= data.rows[i].reply %></p>
-  			<p class = "AnswerScore"> <%= data.rows[i].score %></p>
-  			<a href = "/question/upvote?aid=<%data.rows[i].aid%>" class="btn btn-default" role="b­utt­on">Good Answer</a>
-  			<a href = "/question/downvote?aid=<%data.rows[i].aid%>" class="btn btn-default" role="b­utt­on">Bad Answer</a>
+  			<p class = "anAnswer"> <%= answers.rows[i].reply %></p>
+  			<p class = "AnswerScore"> <%= answers.rows[i].score %></p>
+  			<a href = "/question/upvote?aid=<%=answers.rows[i].aid%>" class="btn btn-default" role="b­utt­on">Good Answer</a>
+  			<a href = "/question/downvote?aid=<%=answers.rows[i].aid%>" class="btn btn-default" role="b­utt­on">Bad Answer</a>
   		</li>
   		<%
   	}
