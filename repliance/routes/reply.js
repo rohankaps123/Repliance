@@ -50,11 +50,10 @@ router.post('/reply', function(req, res) {
 	  //Pull values from form
 	  var qid = req.body.qid;
       var text = req.body.aText;
-
       dblib.addAnswer(qid, uid, text, function(error, data){
       if (error){
 		req.flash('reply', error);
-        res.redirect('/reply');
+        res.redirect('/main');
       } else{
           res.redirect('/myanswers');
       }

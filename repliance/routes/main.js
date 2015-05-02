@@ -27,7 +27,7 @@ router.get('/', function(req, res) {
                       fname : user.fname,
                       lname : user.lname,
                       message : message,
-                      data : data });
+                      data : data});
         }
       });
     }

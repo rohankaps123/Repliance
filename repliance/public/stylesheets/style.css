@@ -187,7 +187,7 @@ button:hover{
 
 .qText {
 	width: 800px;
-	height: 375px;
+	height: 75px;
 	font-size: 16px;
 	font-family: 'Ubuntu', sans-serif;
 	color: black;
@@ -230,3 +230,80 @@ button:hover{
 	line-height: 24px;
 	color: #0066CC;
 }
+
+.clickable
+{
+    cursor: pointer;
+}
+
+.clickable .glyphicon
+{
+    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px
+}
+
+.qlistel>.container{
+
+	margin: 10px 0;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 17px;
+	border-radius: 10px;
+	list-style-type: none;
+	display: block;
+	background-color: white;
+	width: 62%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.panel-primary {	border-color: transparent;}
+
+.panel-heading {
+  padding: 0px 0px;
+  border-color: transparent;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+.panel-primary>.panel-heading {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 17px;
+	color: black;
+	border-radius: 10px;
+  background-color: white;
+	border-color: transparent;
+}
+
+.panel-primary>.panel-body {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 17px;
+	color: black;
+	border-radius: 10px;
+  background-color: white;
+	border-color: transparent;
+}
+
+.panel{
+	border-radius: 0px;
+	box-shadow: 0 0px 0px rgba(0,0,0,0);
+}
+.panel-primary>.panel-heading> .panel-title {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 17px;
+	color: black;
+	border-radius: 10px;
+  background-color: white;
+}
+
+.panel-heading span
+{
+    margin-top: 0px;
+    font-size: 15px;
+    margin-right: -9px;
+}
+a.clickable { color: inherit; }
+a.clickable:hover { text-decoration:none;}
