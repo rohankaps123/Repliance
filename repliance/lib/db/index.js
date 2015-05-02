@@ -245,7 +245,7 @@ function addAnswer(qid, uid, text, cb) {
 					cb(error);
 				} else {
 				    var qstring = 'insert into answers values(($1),($2),($3),($4));';
-					client.query(qstring,  [newAID, uid, 0, text], function(err, result) {
+					client.query(qstring,  [newAID, uid, 1, text], function(err, result) {
 							done();
 							//client.end();
 							if (err) {
@@ -449,6 +449,7 @@ function getQuestion(qid, cb){
 	});
 }
 
+
 function getReplies(qid, uid, cb){
 	pg.connect(cstr, function(err, client, done){
 		if(err){
@@ -476,7 +477,51 @@ function getReplies(qid, uid, cb){
 	});
 }
 
+function upvote(aid, uid, cb){
+	pg.connect(cstr, function(err, client, done){
+		if (err){
+			cb(err);
+		}
+		else{
+			var qstring = 'update answers set score = 2 where aid = ' + aid;
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				if(err){
+					cb(err);
+				}
+				else{
+					cb(undefined, aid);
+				}
 
+			});
+		}
+
+	});
+}
+
+function downvote(aid, uid, cb){
+	pg.connect(cstr, function(err, client, done){
+		if (err){
+			cb(err);
+		}
+		else{
+			var qstring = 'update answers set score = 0 where aid = ' + aid;
+			client.query(qstring, function(err, result){
+				done();
+				client.end();
+				if(err){
+					cb(err);
+				}
+				else{
+					cb(undefined, aid);
+				}
+
+			});
+		}
+
+	});
+}
 
 /**
  * Export the functions
@@ -495,5 +540,7 @@ module.exports = {
   openQuestions		: openQuestions,
   getQuestion       : getQuestion,
   addAnswer         : addAnswer,
-  getReplies		: getReplies
+  getReplies		: getReplies,
+  upvote			: upvote,
+  downvote			: downvote
 };

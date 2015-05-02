@@ -20,7 +20,7 @@
         <li><a href="/account">Account</a></li>
         <li><a href="/myquestions">My Questions</a></li>
         <li><a href="/myanswers">My Answers</a></li>
-        <li><a href="/askquestion">Ask Questions</a></li>
+        <li><a href="/askquestion">Ask a Question</a></li>
         <li><a href="/user/logout">Logout</a></li>
       </ul>
     </div>
@@ -28,10 +28,10 @@
       <ul class = "qList">
 
         <li class= "questionList">
-          <p><strong>Question: </strong><%= question.title %> </p>
-          <p><strong>Question Details: </strong><%=  question.bodytext %> </p>
-          <p><strong># of Replies: </strong><%= question.repliestotal %> </p>
-          <p><strong>Max Replies: </strong><%= question.replieslimit %> </p>
+          <p class = "myQTitle"><%= question.title %> </p>
+          <p class = "myQ"><%=  question.bodytext %> </p><br>
+          <p class = "myQ"><strong># of Replies: </strong><%= question.repliestotal %> </p>
+          <p class = "myQ"><strong>Max Replies: </strong><%= question.replieslimit %> </p>
 
         </li>
       </ul>
@@ -45,7 +45,5 @@
       <input type="hidden" name="qid" value="<%=question.qid%>">
       <input type="submit" class="otherButton" value="Post Reply">
     </form>
-
-    <p><a href="/main" class = "backLink">Back to Main</a></p>
   </body>
 </html>
