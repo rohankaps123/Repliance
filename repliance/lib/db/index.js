@@ -244,66 +244,85 @@ function addAnswer(qid, uid, text, cb) {
 				if (error){
 					cb(error);
 				} else {
-				    var qstring = 'insert into answers values(($1),($2),($3),($4));';
-					client.query(qstring,  [newAID, uid, 1, text], function(err, result) {
-							done();
-							//client.end();
-							if (err) {
-								cb(err);
-							} else {
-								var qstring2 = 'insert into qa values(($1),($2));';
-								    client.query(qstring2, [qid, newAID], function(err, result) {
-								    done();
-								    //client.end();//put back?
-							        if (err) {
-										cb(err);
-									} else {
-									var qstring3 = 'update questions set repliestotal = repliestotal + 1 where qid = ' + qid + ';';
-									    client.query(qstring3, function(err, result) {
-									    done();
-									    //client.end();
+					var qstring0 = 'select * from questions where qid = '+ qid;
+					client.query(qstring0, function(err, result){
+						done();
+						if(result.rows[0].uid === uid){
+							cb(err);
+						}
+						else if(result.rows[0].status === 1){
+							cb(err);
+						}
+						else{
+							var qstring00 = 'select * from questions inner join qa on questions.qid = qa.qid inner join answers on qa.aid = answers.aid inner join users on answers.uid = users.uid where questions.qid = '+ qid +' and users.uid = '+ uid;
+						    client.query(qstring00, function(err, result){
+						    	if(result.rows[0] !== undefined){
+						    		cb(err);
+						    	}
+						    	else{
+								    var qstring = 'insert into answers values(($1),($2),($3),($4));';
+									client.query(qstring,  [newAID, uid, 1, text], function(err, result) {
+											done();
+											//client.end();
 											if (err) {
 												cb(err);
 											} else {
-
-												var qstring4 = 'select * from questions where qid = ' + qid + ';';
-												    client.query(qstring4, function(err, result) {
+												var qstring2 = 'insert into qa values(($1),($2));';
+												    client.query(qstring2, [qid, newAID], function(err, result) {
 												    done();
-												    //client.end();
-														if (err) {
-															cb(err);
-														} else {
+												    //client.end();//put back?
+											        if (err) {
+														cb(err);
+													} else {
+													var qstring3 = 'update questions set repliestotal = repliestotal + 1 where qid = ' + qid + ';';
+													    client.query(qstring3, function(err, result) {
+													    done();
+													    //client.end();
+															if (err) {
+																cb(err);
+															} else {
 
-															//"Was this the final answer?"
-															if (result.rows[0].repliestotal >= result.rows[0].replieslimit){
-
-																var qstring5 = 'update questions set status = 1 where qid = ' + qid + ';';
-																    client.query(qstring5, function(err, result) {
+																var qstring4 = 'select * from questions where qid = ' + qid + ';';
+																    client.query(qstring4, function(err, result) {
 																    done();
-																    client.end();
+																    //client.end();
 																		if (err) {
 																			cb(err);
-																		}
-																		else{
-																			cb(undefined, newAID);
+																		} else {
+
+																			//"Was this the final answer?"
+																			if (result.rows[0].repliestotal >= result.rows[0].replieslimit){
+
+																				var qstring5 = 'update questions set status = 1 where qid = ' + qid + ';';
+																				    client.query(qstring5, function(err, result) {
+																				    done();
+																				    client.end();
+																						if (err) {
+																							cb(err);
+																						}
+																						else{
+																							cb(undefined, newAID);
+																						}
+																					});
+																			}
+																			//"No it wasn't, leave the question open and move on."
+																			else{
+																				cb(undefined, newAID);
+																			}
 																		}
 																	});
 															}
-															//"No it wasn't, leave the question open and move on."
-															else{
-																cb(undefined, newAID);
-															}
-														}
-													});
+
+														});
+
+													}
+												});
 											}
-
-										});
-
-									}
-								});
-							}
+									});
+								}
+							});
+						}
 					});
-				
 				}
 			});
 		}
