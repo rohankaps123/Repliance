@@ -26,7 +26,6 @@ router.get('/', function(req, res) {
                       username : user.username,
                       fname : user.fname,
                       lname : user.lname,
-                      score : user.score,
                       message : message,
                       data : data});
         }

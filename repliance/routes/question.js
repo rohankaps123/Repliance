@@ -22,7 +22,6 @@ router.get('/', function(req, res){
   			}
   			else{
   				res.render('question', {username : user.username,
-  										score : user.score,
   										answers : data});
   			}
   		});
