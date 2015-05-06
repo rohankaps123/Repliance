@@ -53,7 +53,7 @@ router.get('/upvote', function(req, res){
 router.get('/downvote', function(req, res){
 	var user = req.session.user;
 	var aid = req.query.aid;
-	console.log(aid);
+	//console.log(aid);
 	if(user === undefined || online[user.uid] === undefined) {
 		req.flash('auth', 'Not logged in!');
 		res.redirect('/user/login');

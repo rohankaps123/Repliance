@@ -33,9 +33,3 @@ For anyone who couldn't make the 4/12/15 meeting, here's how we set up the datab
 7.) Now you may copy and paste or run the schema.sql file I have included in this folder to make all of the tables for the database. Once you have done this you can use the following command to list the four tables.
 
 #### \dt
-
-8.) Next, add a user to the users table with uid 0 so that you can test login.
-
-#### insert into users values(0,'username', 'password', 'billy', 'smith', 1);
-
-9.) That's all for now.
