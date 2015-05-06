@@ -395,11 +395,11 @@ function userQuest(user, cb){
 				done();
 				client.end();
 				if(err){
-					console.log('error');
+					//console.log('error');
 					cb(err);
 				}
 				else{
-					console.log('result');
+					//console.log('result');
 					cb(undefined, result);
 				}
 			});
@@ -423,11 +423,11 @@ function userAns(user, cb){
 				done();
 				client.end();
 				if(err){
-					console.log('error');
+					//console.log('error');
 					cb(err);
 				}
 				else{
-					console.log('result');
+					//console.log('result');
 					cb(undefined, result);
 				}
 			});
@@ -450,10 +450,10 @@ function openQuestions(user, cb){
 				client.end();
 				//console.log(result);
 				if(err){
-					console.log('error');
+					//console.log('error');
 					cb(err);
 				} else {
-					console.log('result');
+					//console.log('result');
 					cb(undefined, result);
 				}
 			});
@@ -475,10 +475,10 @@ function getQuestion(qid, cb){
 				client.end();
 				//console.log(result);
 				if(err){
-					console.log('error');
+					//console.log('error');
 					cb(err);
 				} else {
-					console.log('result');
+					//console.log('result');
 					cb(undefined, result);
 				}
 			});
@@ -498,7 +498,7 @@ function getReplies(qid, uid, cb){
 				done();
 				client.end();
 				if(err){
-					console.log('error');
+					//console.log('error');
 					cb(err);
 				}
 				else{
@@ -578,7 +578,7 @@ function upvote(aid, uid, cb){
 																cb(err);
 															}
 															else{
-																console.log(qid + "the index callback");
+																//console.log(qid + "the index callback");
 																cb(undefined, qid);
 															}
 														});
@@ -662,7 +662,7 @@ function downvote(aid, uid, cb){
 																cb(err);
 															}
 															else{
-																console.log(qid + "the index callback");
+																//console.log(qid + "the index callback");
 																cb(undefined, qid);
 															}
 														});
