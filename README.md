@@ -34,3 +34,7 @@ On 3/13/15, both the functional documentation detailing usage of Repliance and a
 On 04/10/15, the dspec.pdf and slides.pdf files were added into the dspec folder and our team notes were udpated.
 
 On 05/07/15, both the Project 4 and this README files were updated.
+
+LINK TO VIDEOS:
+
+https://drive.google.com/a/umass.edu/folderview?id=0B0OY1-e-H82nfnJ4bjk2UkREcTFHb19pQWRBaFBOSUpSc3FhTzNmZDNldE1kYWdTeThIVEE&usp=sharing
